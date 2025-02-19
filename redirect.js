@@ -10,8 +10,8 @@ var idLinkForm = 'link-old';
 var idTextBoxOld = 'url-old';
 var idLinkNew = 'link-new';
 var idTextBoxNew = 'url-new';
-var idRedirect = 'redirect';
-var idRedirectLink = 'redirect-url';
+var idRedirect = 'link-redirect';
+var idRedirectLink = 'url-redirect';
 
 var itemID = urlParams.get('item');
 console.log(`Iten ID: ${itemID}`);
