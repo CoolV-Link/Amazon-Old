@@ -2,6 +2,8 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
+const tagGawdTech = 'gawdtech-20';
+
 const baseURL = 'https://www.amazon.com/dp/';
 
 const itemURL = "/dp/${itemID}";
