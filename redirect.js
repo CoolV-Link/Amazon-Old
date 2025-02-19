@@ -1,17 +1,17 @@
-const queryString = window.location.search;
+var queryString = window.location.search;
 
-const urlParams = new URLSearchParams(queryString);
+var urlParams = new URLSearchParams(queryString);
 
-const tagGawdTech = 'gawdtech-20';
+var tagGawdTech = 'gawdtech-20';
 
-const baseURL = 'https://www.amazon.com/dp/';
+var baseURL = 'https://www.amazon.com/dp/';
 
 
-const itemID = urlParams.get('item')
+var itemID = urlParams.get('item')
 console.log(itemID);
 
 
-const tagID = urlParams.get('tag')
+var tagID = urlParams.get('tag')
 console.log(tagID);
 
 if (!tagID) {
@@ -24,11 +24,11 @@ window.location.href = "new.html";
   return;
 }
 
-const itemURL = "/dp/${itemID}";
+var itemURL = "/dp/${itemID}";
 
-const tagURL = "?tag=${tagID}";
+var tagURL = "?tag=${tagID}";
 
-const linkURL = "baseURL+itemURL+tagURL;
+var linkURL = "baseURL+itemURL+tagURL;
 
 window.location.htef = "${linkURL}";
 
