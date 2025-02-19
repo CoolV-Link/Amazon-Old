@@ -18,6 +18,9 @@ console.log(`[Arg] Item ID: ${itemID}`);
 var tagID = urlParams.get('tag');
 console.log(`[Arg] Tag ID: ${tagID}`);
 
+var listID = urlParams.get('list');
+console.log(`[Arg] List ID: ${listID}`);
+
 
 function getNewURL (itemID, tagID)
 {
@@ -126,5 +129,10 @@ function toggleElement(id, show) {
   } else {
     element.style.display = 'none';
   }
+}
+
+function doItemList ()
+{
+  
 }
 
