@@ -6,16 +6,20 @@ const tagGawdTech = 'gawdtech-20';
 
 const baseURL = 'https://www.amazon.com/dp/';
 
-const itemURL = "/dp/${itemID}";
 
-const affURL = "?tag=${storeID}";
-
-const linkURL = "baseURL+itemURL+affURL;
-
-
-const productID = urlParams.get('item')
+const itemID = urlParams.get('item')
 console.log(productID);
 
 
-const storeID = urlParams.get('tag')
+const tagID = urlParams.get('tag')
 console.log(storeID);
+
+
+const itemURL = "/dp/${itemID}";
+
+const tagURL = "?tag=${tagID}";
+
+const linkURL = "baseURL+itemURL+tagURL;
+
+window.location.htef = "${linkURL}";
+
