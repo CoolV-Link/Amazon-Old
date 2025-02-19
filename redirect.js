@@ -90,7 +90,7 @@ function generateLink (idOld, idNew)
 }
 
 
-function init ()
+function doRedirect ()
 {
   if (!tagID) {
     tagID = tagDefault;
@@ -100,6 +100,8 @@ function init ()
     redirectURL = getAmazonURL(itemID, tagID);
     redirect(itemID. tagID);
     setLink(redirectID, redirectURL);
+    return true;
   }
+  return false;
 }
 
