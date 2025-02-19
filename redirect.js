@@ -20,7 +20,7 @@ tagID = tagGawdTech;
 
 
 if (!itemID) {
-window.location.href = "new.html";
+  redirect("new.html");
   return;
 }
 
@@ -30,7 +30,7 @@ var tagURL = "?tag=${tagID}";
 
 var linkURL = "baseURL+itemURL+tagURL;
 
-window.location.href = "${linkURL}";
+redirect("${linkURL}");
 
 
 function redirect (url)
