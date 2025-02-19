@@ -19,6 +19,11 @@ tagID = tagGawdTech;
 }
 
 
+if (!itemID) {
+window.location.href = "new.html";
+  return;
+}
+
 const itemURL = "/dp/${itemID}";
 
 const tagURL = "?tag=${tagID}";
