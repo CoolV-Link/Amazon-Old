@@ -55,9 +55,9 @@ function getItemID (url)
 
 function setLink (id, url)
 {
-  var hyperlink = getElement(id);
-  hyperlink.text = `${url}`;
-  hyperlink.href = `${url}`;
+  var element = getElement(id);
+  element.text = `${url}`;
+  element.href = `${url}`;
 }
 
 function getElement (id) {
@@ -77,13 +77,13 @@ function copyText(id)
 function setText(id, text='')
 {
     var element = getElement(id);
-    element.text = `${text}`;
+    element.text = text;
 }
 
 function setValue(id, text='')
 {
-    var textBox = getElement(id);
-    textBox.value = `${text}`;
+    var element = getElement(id);
+    element.value = text;
 }
 
 function generateLink (idOld, idNew)
