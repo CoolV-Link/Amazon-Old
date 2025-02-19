@@ -9,25 +9,6 @@
   <a id="url-redirect" href=""></a>
 </div>
 
-<div id="new">
-  <label for="url-new"><h1>Affiliate URL:</h1></label>
-  <input type="text" id="url-new" name="url-new" size="50" readonly="true" value="">
-  <br><br>
-  <button onclick="copyText('url-new')">Copy Link To Clipboard</button>
-  <br><br><br><br><hr><br>
-</div>
-
-<div id="old">
- <!-- <form action="./" method="post">-->
-  <label for="url-old"><h1>Amazon URL:</h1></label>
-  <textarea id="url-old" name="url-old" rows="10" cols="60" required="true" placeholder="https://www.amazon.com/dp/[ITEM_ID]"></textarea>
-  <br><br>
-  <button onclick="generateLink('url-old','url-new')">Generate Affiliate Link</button>
-  <button onclick="clearText('url-old')">Clear Text</button>
-  <!--</form>-->
-</div>
-
-
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript">
   var newBaseURL = "https://coolv-link.github.io/Amazon/";
@@ -35,6 +16,9 @@
   var redirectID = 'url-redirect';
   var linkRedir = doRedirect();
   console.log("Redirect: " + linkRedir);
+  if (!linkRedir) {
+    redirect(`${newBaseURL}new.html`);
+  }
 </script>
   
 </body>
