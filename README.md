@@ -1,7 +1,7 @@
 # Amazon Links
 
 ### Product Page
-https://coolv-link.github.io/Amazon/?item=[ITEM_ID]
+https://a.gt.myz.info/?item=[ITEM_ID]
 
 ### Link Generator
-https://coolv-link.github.io/Amazon/new.html
+https://a.gt.myz.info/new.html
