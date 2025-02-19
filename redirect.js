@@ -1,8 +1,12 @@
 /** Amazon Affiliate Link **/
 
+var newBaseURL = '';
+
 var tagDefault = '';
 
 var redirectID = '';
+
+
 var redirectURL = false;
 
 var queryString = window.location.search;
@@ -15,7 +19,12 @@ var tagID = urlParams.get('tag');
 console.log(`[Arg] Tag ID: ${tagID}`);
 
 
-function getAmazonURL (itemID, tagID=tagDefault)
+function getNewURL (itemID, tagID)
+{
+  return `${newBaseURL}?item=${itemID}&tag=${tagID}`;
+}
+
+function getAmazonURL (itemID, tagID)
 {
   var amazonURL = "https://www.amazon.com";
   var itemURL = `/dp/${itemID}`;
@@ -85,7 +94,7 @@ function generateLink (idOld, idNew)
     setValue(idNew, 'Error');
     return;
   }
-  var link = getAmazonURL(itemID, tagID);
+  var link = getNewURL(itemID, tagID);
   setValue(idNew, link);
 }
 
@@ -98,7 +107,7 @@ function doRedirect ()
   }
   if (itemID) {
     redirectURL = getAmazonURL(itemID, tagID);
-    redirect(itemID. tagID);
+    redirect(redirectURL);
     setLink(redirectID, redirectURL);
     return true;
   }
