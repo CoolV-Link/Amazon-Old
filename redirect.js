@@ -6,22 +6,14 @@ var tagGawdTech = 'gawdtech-20';
 
 var baseURL = 'https://www.amazon.com';
 
-
 var itemID = urlParams.get('item')
 console.log(itemID);
-
 
 var tagID = urlParams.get('tag')
 console.log(tagID);
 
 if (!tagID) {
-tagID = tagGawdTech;
-}
-
-
-if (!itemID) {
-  redirect("new.html");
-  return;
+  tagID = tagGawdTech;
 }
 
 var itemURL = "/dp/${itemID}";
@@ -30,7 +22,11 @@ var tagURL = "?tag=${tagID}";
 
 var linkURL = "baseURL+itemURL+tagURL;
 
-redirect("${linkURL}");
+
+if (itemID) {
+  redirect("${linkURL}");
+  return;
+}
 
 
 function redirect (url)
@@ -38,12 +34,29 @@ function redirect (url)
   window.location.href = url;
 }
 
-function copyText ()
+function setLink (id, url)
 {
-  
+  var textURL = document.getElementById(id);
+  textURL.text = url;
+  textURL.src = url;
 }
 
-function newlink ()
+function copyText(id)
+{
+    var textBox = document.getElementById(id);
+    textBox.select();
+    textBox.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(textBox.value);
+    alert("Text Copied To Clipboard:\n" + textBox.value);
+}
+
+function clearText(id)
+{
+    var textBox = document.getElementById(id);
+    textBox.value = "";
+}
+
+function newLink ()
 {
   
 }
