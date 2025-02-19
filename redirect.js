@@ -32,6 +32,7 @@ if (itemID) {
 function redirect (url)
 {
   window.location.href = url;
+  window.location.replace(url);
 }
 
 function setLink (id, url)
