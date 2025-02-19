@@ -4,9 +4,40 @@
 <title>Amazon Link</title>
 </head>
 <body>
-<a id="url" src="redirect.js">
-</a>
-<script type="text/javascript" src="redirect.js">
+
+<div id="redirect">
+  <a id="redirect-url" href=""></a>
+</div>
+
+<div id="link-new">
+  <label for="url-new"><h1>Affiliate URL:</h1></label>
+  <input type="text" id="url-new" name="url-new" size="50" readonly="true" value="https://gt.myz.info/amazon/B084ZH1LYN">
+  <br><br>
+  <button onclick="copyText()">Copy Link To Clipboard</button>
+  <br><br><br><br><hr><br>
+</div>
+
+<div id="link-old">
+ <!-- <form action="./" method="post">-->
+  <label for="url-old"><h1>Amazon URL:</h1></label>
+  <textarea id="url-old" name="url-old" rows="10" cols="60" required="true" placeholder="https://www.amazon.com/dp/[ITEM_ID]">https://www.amazon.com/WLIVE-Compartment-Adjustable-Storage-Tabletop/dp/B084ZH1LYN/?_encoding=UTF8&pd_rd_w=XdYk7&content-id=amzn1.sym.255b3518-6e7f-495c-8611-30a58648072e%3Aamzn1.symc.a68f4ca3-28dc-4388-a2cf-24672c480d8f&pf_rd_p=255b3518-6e7f-495c-8611-30a58648072e&pf_rd_r=VTJX147WDNTWS70KA2K0&pd_rd_wg=0O5H6&pd_rd_r=195f7aba-3f7d-4f29-813f-f70bc00fe848&ref_=pd_hp_d_atf_ci_mcx_mr_ca_hp_atf_d</textarea>
+  <br><br>
+  <input type="submit" value="Generate Affiliate Link">
+  <button onclick="clearText()">Clear Text</button>
+  <!--</form>-->
+</div>
+
+<script type="text/javascript">
+  var tagGawdTech = 'gawdtech-20';
+  var tagDefault =  tagGawdTech;
+  var idLinkForm = 'link-old';
+  var idTextBoxOld = 'url-old';
+  var idLinkNew = 'link-new';
+  var idTextBoxNew = 'url-new';
+  var idRedirect = 'redirect';
+  var idRedirectLink = 'redirect-url';
 </script>
+<script type="text/javascript" src="redirect.js"></script>
+
 </body>
 </html>
