@@ -1,14 +1,4 @@
-
-/** CONFIG **/
-
-var tagGawdTech = 'gawdtech-20';
-
-var tagDefault =  tagGawdTech;
-
-//var idRedirect = 'url-redirect';
-
-/** END CONFIG **/
-
+/** Amazon Affiliate Link **/
 
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
