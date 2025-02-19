@@ -94,6 +94,10 @@ function generateLink (idOld, idNew)
     setValue(idNew, 'Error');
     return;
   }
+  if (!tagID) {
+    tagID = tagDefault;
+    console.log(`[Default] Tag ID: ${tagID}`);
+  }
   var link = getNewURL(itemID, tagID);
   setValue(idNew, link);
 }
