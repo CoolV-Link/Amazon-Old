@@ -2,14 +2,18 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const baseURL = '';
+const baseURL = 'https://www.amazon.com/dp/';
 
-const linkURL = "";
+const itemURL = "/dp/${itemID}";
+
+const affURL = "?tag=${storeID}";
+
+const linkURL = "baseURL+itemURL+affURL;
 
 
 const productID = urlParams.get('item')
 console.log(productID);
 
 
-const storeID = urlParams.get('store')
+const storeID = urlParams.get('tag')
 console.log(storeID);
