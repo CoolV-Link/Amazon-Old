@@ -1,7 +1,5 @@
 
-var queryString = window.location.search;
-var urlParams = new URLSearchParams(queryString);
-
+/** CONFIG **/
 
 var tagGawdTech = 'gawdtech-20';
 var tagDefault =  tagGawdTech;
@@ -13,12 +11,22 @@ var idTextBoxNew = 'url-new';
 var idRedirect = 'link-redirect';
 var idRedirectLink = 'url-redirect';
 
+/** END CONFIG **/
+
+
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+
 var itemID = urlParams.get('item');
-console.log(`Iten ID: ${itemID}`);
+console.log(`[Arg] Item ID: ${itemID}`);
 
 var tagID = urlParams.get('tag');
-console.log(`Tag ID: ${tagID}`);
+console.log(`[Arg] Tag ID: ${tagID}`);
 
+if (!tagID) {
+  tagID = tagDefault;
+  console.log(`[Default] Tag ID: ${tagID}`);
+}
 
 
 function getAmazonURL (itemID, tagID=tagDefault)
@@ -30,12 +38,12 @@ function getAmazonURL (itemID, tagID=tagDefault)
   return fullURL;
 }
 
-function redirect (itemID, tagID=tagDefault)
+function redirect (itemID, tagID)
 {
-  var url = getAmazonURL (itemID, tagID);
+  var url = getAmazonURL(itemID, tagID);
   window.location.href = `${url}`;
   window.location.replace(`${url}`);
-  setLink (`${url}`);
+  setLink(url);
 }
 
 function getItemID (url)
@@ -82,9 +90,11 @@ function setValue(id, text)
 
 function generateLink (idOld, idNew)
 {
-  var textBox = getElement(idOld);
-  var itemID = getItemID(textBox.value);
-  var link = getAmazonURL(itemID, tagDefault);
+  var inputItem = getElement(idOld);
+  var itemID = getItemID(inputItem.value);
+  var argTag = urlParams.get('tag');
+  tagID = argTag ? argTag : tagDefault;
+  var link = getAmazonURL(itemID, tagID);
   setValue(idNew, link);
 }
 
