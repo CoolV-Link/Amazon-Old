@@ -4,7 +4,7 @@ var urlParams = new URLSearchParams(queryString);
 
 var tagGawdTech = 'gawdtech-20';
 
-var baseURL = 'https://www.amazon.com/dp/';
+var baseURL = 'https://www.amazon.com';
 
 
 var itemID = urlParams.get('item')
@@ -30,5 +30,20 @@ var tagURL = "?tag=${tagID}";
 
 var linkURL = "baseURL+itemURL+tagURL;
 
-window.location.htef = "${linkURL}";
+window.location.href = "${linkURL}";
 
+
+function redirect (url)
+{
+  window.location.href = url;
+}
+
+function copyText ()
+{
+  
+}
+
+function newlink ()
+{
+  
+}
