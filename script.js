@@ -48,7 +48,7 @@ function getItemID (url)
     return false;
   }
   itemStart += 4;
-  var itemEnd = url.indexOf('/', itemStart);
+  var itemEnd = 10;
   var itemID = url.substring(itemStart, itemEnd);
   return itemID;
 }
