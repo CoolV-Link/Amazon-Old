@@ -9,7 +9,7 @@
   <a id="url-redirect" href=""></a>
 </div>
 
-<div id="new" style="display:none;">
+<div id="new">
   <label for="url-new"><h1>Affiliate URL:</h1></label>
   <input type="text" id="url-new" name="url-new" size="50" readonly="true" value="">
   <br><br>
@@ -22,7 +22,7 @@
   <label for="url-old"><h1>Amazon URL:</h1></label>
   <textarea id="url-old" name="url-old" rows="10" cols="60" required="true" placeholder="https://www.amazon.com/dp/[ITEM_ID]"></textarea>
   <br><br>
-  <button onclick="generateLink('url-old','url-new'); toggleElement('new', true);">Generate Affiliate Link</button>
+  <button onclick="generateLink('url-old','url-new')">Generate Affiliate Link</button>
   <button onclick="clearText('url-old')">Clear Text</button>
   <!--</form>-->
 </div>
