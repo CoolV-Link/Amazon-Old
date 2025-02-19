@@ -8,11 +8,15 @@ const baseURL = 'https://www.amazon.com/dp/';
 
 
 const itemID = urlParams.get('item')
-console.log(productID);
+console.log(itemID);
 
 
 const tagID = urlParams.get('tag')
-console.log(storeID);
+console.log(tagID);
+
+if (!tagID) {
+tagID = tagGawdTech;
+}
 
 
 const itemURL = "/dp/${itemID}";
