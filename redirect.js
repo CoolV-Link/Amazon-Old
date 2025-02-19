@@ -115,3 +115,12 @@ function doRedirect ()
   return false;
 }
 
+function toggleElement(id, show) {
+  var element = getElement(id);
+  if (show) {
+    element.style.display = 'block';
+  } else {
+    element.style.display = 'none';
+  }
+}
+
