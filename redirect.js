@@ -107,6 +107,7 @@ function doRedirect ()
   }
   if (itemID) {
     redirectURL = getAmazonURL(itemID, tagID);
+    console.log(`[Redirect] URL: ${redirectURL}`);
     redirect(redirectURL);
     setLink(redirectID, redirectURL);
     return true;
