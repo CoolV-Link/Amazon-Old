@@ -2,14 +2,10 @@
 /** CONFIG **/
 
 var tagGawdTech = 'gawdtech-20';
+
 var tagDefault =  tagGawdTech;
 
-var idLinkForm = 'link-old';
-var idTextBoxOld = 'url-old';
-var idLinkNew = 'link-new';
-var idTextBoxNew = 'url-new';
-var idRedirect = 'link-redirect';
-var idRedirectLink = 'url-redirect';
+//var idRedirect = 'url-redirect';
 
 /** END CONFIG **/
 
@@ -28,6 +24,8 @@ if (!tagID) {
   console.log(`[Default] Tag ID: ${tagID}`);
 }
 
+var redirectURL = false;
+
 
 function getAmazonURL (itemID, tagID=tagDefault)
 {
@@ -38,28 +36,31 @@ function getAmazonURL (itemID, tagID=tagDefault)
   return fullURL;
 }
 
-function redirect (itemID, tagID)
+function redirect (url)
 {
-  var url = getAmazonURL(itemID, tagID);
+  //var url = getAmazonURL(itemID, tagID);
   window.location.href = `${url}`;
   window.location.replace(`${url}`);
-  setLink(url);
+  //setLink(url);
 }
 
 function getItemID (url)
 {
-  var itemStart = paragraph.indexOf('/dp/');
+  var itemStart = url.indexOf('/dp/');
+  if (!itemStart) {
+    return false;
+  }
   itemStart += 4;
-  var itemEnd = paragraph.indexOf('/', itemStart);
-  var itemID = text.substring(itemStart, itemEnd);
+  var itemEnd = url.indexOf('/', itemStart);
+  var itemID = url.substring(itemStart, itemEnd);
   return itemID;
 }
 
-function setLink (url)
+function setLink (id, url)
 {
-  var hyperlink = getElement(idRedirectLink);
+  var hyperlink = getElement(id);
   hyperlink.text = `${url}`;
-  hyperlink.src = `${url}`;
+  hyperlink.href = `${url}`;
 }
 
 function getElement (id) {
@@ -92,14 +93,18 @@ function generateLink (idOld, idNew)
 {
   var inputItem = getElement(idOld);
   var itemID = getItemID(inputItem.value);
-  var argTag = urlParams.get('tag');
-  tagID = argTag ? argTag : tagDefault;
+  if (itemID === false) {
+    setValue(idNew, 'Error');
+    return;
+  }
   var link = getAmazonURL(itemID, tagID);
   setValue(idNew, link);
 }
 
 
 if (itemID) {
+  redirectURL = getAmazonURL(itemID, tagID);
   redirect(itemID. tagID);
+  //setLink(idRedirect, redirectURL);
 }
 
