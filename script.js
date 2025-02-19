@@ -74,13 +74,13 @@ function copyText(id)
     alert("Text Copied To Clipboard:\n" + textBox.value);
 }
 
-function setText(id, text)
+function setText(id, text='')
 {
     var element = getElement(id);
     element.text = `${text}`;
 }
 
-function setValue(id, text)
+function setValue(id, text='')
 {
     var textBox = getElement(id);
     textBox.value = `${text}`;
