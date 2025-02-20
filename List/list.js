@@ -10,7 +10,7 @@ console.log(`[Arg] List ID: ${listID}`);
 
 
 const amazonURL = 'https://www.amazon.com';
-const listURL = `${amazonURL}/gp/registry/wishlist/${listID}`;
+const listURL = `${amazonURL}/hz/wishlist/ls/${listID}`;
 
 const AmazonListScraper = require('amazon-list-scraper').default;
 
