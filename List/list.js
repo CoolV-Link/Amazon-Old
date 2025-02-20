@@ -1,8 +1,16 @@
 import test from 'ava';
 import AmazonListScraper from '../dist';
 
-const testListURL = 'https://www.amazon.com/gp/registry/wishlist/1JMCNHNT959X2';
-const multiPagesListURL = 'https://www.amazon.com/gp/registry/wishlist/1EL6CUGB5P0ZV';
+
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+
+var listID = urlParams.get('list');
+console.log(`[Arg] List ID: ${listID}`);
+
+
+const testListURL = 'https://www.amazon.com/gp/registry/wishlist/'+listID;
+const multiPagesListURL = 'https://www.amazon.com/gp/registry/wishlist/'+listID;
 
 test('expose a constructor', t => t.is(typeof AmazonListScraper, 'function'));
 
