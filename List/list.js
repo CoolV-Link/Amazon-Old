@@ -18,6 +18,9 @@ const scraper = new AmazonListScraper();
 scraper.scrape(listURL)
   .then(items => {
     console.log(items);
+    for (var item : items) {
+      
+    }
     //  [
     //    { 
     //      title: 'The Principles of Object-Oriented JavaScript',
