@@ -167,25 +167,29 @@ function getWishList (listID)
   Browser.msgBox("Finished");
 }
 
-function getFirstMatch(regex, text) {
+function getFirstMatch (regex, text)
+{
   var match = regex.exec(text);
   return (match == null) ? "Unknown" : match[1];
 }
 
 
 
-function httpGet(url)
+function httpGet (url)
 {
 	var request = new XMLHttpRequest();
 	request.open("GET", url, true);
-	request.onload = function() {
-		if (request.status == 200) {
+	request.onload = function()
+	{
+		if (request.status == 200)
+		{
 			return request.responseText;
 		} else {
-      return false;
+      			return false;
 		}
 	};
-	request.onerror = function() {
+	request.onerror = function()
+	{
 		return false;
 	};
 	request.send();
