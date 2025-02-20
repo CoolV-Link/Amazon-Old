@@ -1,5 +1,5 @@
 
-import AmazonListScraper from './';
+import AmazonListScraper from 'AmazonListScraper.js';
 
 
 var queryString = window.location.search;
