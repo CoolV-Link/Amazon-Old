@@ -72,16 +72,20 @@ function redirect (url)
   //setLink(url);
 }
 
-function pageRedirect ()
+function getRedirectURL ()
 {
-  var url = "new.html";
   if (ARG_LIST) {
-    url = `list.html?list=${ARG_LIST}`;
+    return `list.html?list=${ARG_LIST}`;
   }
   if (ARG_ITEM) {
-    url = GetAmazonURL(ARG_ITEM, ARG_TAG);
+    return GetAmazonURL(ARG_ITEM, ARG_TAG);
   }
+  return "new.html";
+}
+
+function pageRedirect ()
+{
+  var url = getRedirectURL();
   setLink("url-redirect", url);
   redirect(url);
-  return url;
 }
