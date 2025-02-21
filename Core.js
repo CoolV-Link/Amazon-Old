@@ -11,8 +11,6 @@ console.log(`[Arg] Tag ID: ${ARG_TAG}`);
 var ARG_LIST = URL_PARAMS.get('list');
 console.log(`[Arg] List ID: ${ARG_LIST}`);
 
-var LISTS = [];
-
 
 
 function getNewURL (itemID, tagID)
@@ -74,14 +72,23 @@ function redirect (url)
   //setLink(url);
 }
 
-function redirectItem (idLink)
+function pageRedirect ()
 {
+  var url = false;
+  if (ARG_LIST)
+  {
+    url = `list.html?list=${ARG_LIST}`;
+    redirect(url);
+    return url;
+  }
   if (!ARG_ITEM)
   {
-    return false;
+    url = "new.html";
+    redirect(url);
+    return url;
   }
   var url = GetAmazonURL(ARG_ITEM, ARG_TAG);
-  setLink(idLink, url);
+  setLink("url-redirect", url);
   redirect(url);
   return url;
 }
