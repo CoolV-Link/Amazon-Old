@@ -11,6 +11,8 @@ console.log(`[Arg] Tag ID: ${ARG_TAG}`);
 var ARG_LIST = URL_PARAMS.get('list');
 console.log(`[Arg] List ID: ${ARG_LIST}`);
 
+var LISTS = [];
+
 
 
 function getNewURL (itemID, tagID)
@@ -25,13 +27,7 @@ function getAmazonURL (itemID, tagID)
   return `${amazonURL}/dp/${itemID}?tag=${tagID}`;
 }
 
-function redirect (url)
-{
-  //var url = getAmazonURL(itemID, tagID);
-  window.location.replace(`${url}`);
-  //window.location.href = `${url}`;
-  //setLink(url);
-}
+
 
 function getItemID (url)
 {
@@ -46,12 +42,6 @@ function getItemID (url)
   return itemID;
 }
 
-function setLink (id, url)
-{
-  var element = getElement(id);
-  element.text = `${url}`;
-  element.href = `${url}`;
-}
 
 function getElement (id) {
   var element = document.getElementById(id);
@@ -65,4 +55,33 @@ function copyText(id)
     textBox.setSelectionRange(0, 
   var link = getNewURL(itemID, tagID);
   setValue(idNew, link);
+}
+
+
+
+function setLink (id, url)
+{
+  var element = getElement(id);
+  element.text = `${url}`;
+  element.href = `${url}`;
+}
+
+function redirect (url)
+{
+  //var url = getAmazonURL(itemID, tagID);
+  window.location.replace(`${url}`);
+  //window.location.href = `${url}`;
+  //setLink(url);
+}
+
+function redirectItem (idLink)
+{
+  if (!ARG_ITEM)
+  {
+    return false;
+  }
+  var url = GetAmazonURL(ARG_ITEM, ARG_TAG);
+  setLink(idLink, url);
+  redirect(url);
+  return url;
 }
