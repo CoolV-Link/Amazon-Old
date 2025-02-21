@@ -44,7 +44,8 @@ function getList (id)
 
 function printList (list)
 {
-  setText("list-name", list.name);
+  var title = getElement("list-name");
+  title.text = list.name;
   var ul = getElement("list-items");
   for (var item : list.items)
 {
