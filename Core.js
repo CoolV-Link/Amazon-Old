@@ -1,3 +1,16 @@
+/** Amazon Link **/
+
+// Config
+
+var TAG_DEFAULT = "";
+
+var URL_SITE = "";
+
+// End Config
+
+var LISTS = [];
+
+var URL_AMAZON = "https://www.amazon.com";
 
 var QUERY_STRING = window.location.search;
 var URL_PARAMS = new URLSearchParams(QUERY_STRING);
@@ -10,7 +23,6 @@ console.log(`[Arg] Tag ID: ${ARG_TAG}`);
 
 var ARG_LIST = URL_PARAMS.get('list');
 console.log(`[Arg] List ID: ${ARG_LIST}`);
-
 
 
 function getNewURL (itemID, tagID)
@@ -26,8 +38,6 @@ function getAmazonURL (itemID, tagID)
   }
   return `${URL_AMAZON}/dp/${itemID}?tag=${tagID}`;
 }
-
-
 
 function getItemID (url)
 {
@@ -78,12 +88,12 @@ function redirect (url)
 function getRedirectURL ()
 {
   if (ARG_LIST) {
-    return `list.html?list=${ARG_LIST}`;
+    return `${URL_SITE}/List/?list=${ARG_LIST}`;
   }
   if (ARG_ITEM) {
     return GetAmazonURL(ARG_ITEM, ARG_TAG);
   }
-  return "new.html";
+  return `${URL_SITE}/Link/`;
 }
 
 function pageRedirect (id)
