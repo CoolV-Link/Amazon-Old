@@ -37,8 +37,9 @@ function showList (id)
     }
 }
 
-function print ()
+function print (list)
 {
-  
+  console.log(`[${list.id}] ${list.name}`);
+  console.log(list.items);
 }
 
