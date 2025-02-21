@@ -75,20 +75,15 @@ function redirect (url)
 function pageRedirect ()
 {
   var url = false;
-  if (ARG_LIST)
-  {
+  if (ARG_LIST) {
     url = `list.html?list=${ARG_LIST}`;
-    redirect(url);
-    return url;
   }
-  if (!ARG_ITEM)
-  {
-    url = "new.html";
-    redirect(url);
-    return url;
+  if (ARG_ITEM) {
+    url = GetAmazonURL(ARG_ITEM, ARG_TAG);
   }
-  var url = GetAmazonURL(ARG_ITEM, ARG_TAG);
-  setLink("url-redirect", url);
-  redirect(url);
+  if (url) {
+    setLink("url-redirect", url);
+    redirect(url);
+  }
   return url;
 }
