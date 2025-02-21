@@ -21,8 +21,10 @@ function getNewURL (itemID, tagID)
 
 function getAmazonURL (itemID, tagID)
 {
-  tagID = tagID ? tagID : DEFAULT_TAG;
-  return `${amazonURL}/dp/${itemID}?tag=${tagID}`;
+  if (!tagID) {
+    tagID = TAG_DEFAULT;
+  }
+  return `${URL_AMAZON}/dp/${itemID}?tag=${tagID}`;
 }
 
 
@@ -46,6 +48,7 @@ function getElement (id) {
   return element;
 }
 
+/*
 function copyText(id)
 {
     var textBox = getElement(id);
@@ -54,7 +57,7 @@ function copyText(id)
   var link = getNewURL(itemID, tagID);
   setValue(idNew, link);
 }
-
+*/
 
 
 function setLink (id, url)
