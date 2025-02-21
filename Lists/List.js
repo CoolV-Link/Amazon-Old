@@ -25,14 +25,20 @@ function Item (id, name, info, price)
   this.price = price;
 }
 
-function show List (id)
+function showList (id)
 {
   for (var list : LISTS)
     {
-        if (list.id == id)
+        if (id && id != list.id)
         {
-          //show
+          continue;
         }
+        print(list);
     }
+}
+
+function print ()
+{
+  
 }
 
