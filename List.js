@@ -33,7 +33,7 @@ function showList (id)
         {
           continue;
         }
-        print(list);
+        printList(list);
     }
 }
 
@@ -57,11 +57,11 @@ function printItems (list, items)
 function printItem (item)
 {
   var itemText = createTextNode(item.name);
-	var itemLink = document.createElement('a');
+  var itemLink = document.createElement('a');
   itemLink.href = item.id;
   itemLink.appendChild(itemText);
-	var listItem = document.createElement('li');
-	listItem.appendChild(itemLink);
-	//list.appendChild(listItem);
-	return listItem;
+  var listItem = document.createElement('li');
+  listItem.appendChild(itemLink);
+  //list.appendChild(listItem);
+  return listItem;
 }
