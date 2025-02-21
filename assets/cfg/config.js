@@ -1,12 +1,5 @@
+/** Amazon Config **/
 
-const TAGS = [
-  "gawdtech-20",
-];
+var URL_SITE = "https://a.gt.myz.info";
 
-const LISTS = [
-  "",
-];
-
-const SITE_URL = "https://a.gt.myz.info";
-
-const TAG_DEFAULT = TAGS[0];
+var TAG_DEFAULT = "gawdtech-20";
