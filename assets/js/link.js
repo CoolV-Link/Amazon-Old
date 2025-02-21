@@ -22,6 +22,6 @@ function generateLink (idOld, idNew)
     tagID = tagDefault;
     console.log(`[Default] Tag ID: ${tagID}`);
   }
-  var link = getNewURL(itemID, tagID);
+  var link = getAmazonURL(itemID, tagID);
   outputItem.value = `${link}`;
 }
