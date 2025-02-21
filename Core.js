@@ -58,17 +58,26 @@ function getElement (id) {
   return element;
 }
 
-/*
 function copyText(id)
 {
     var textBox = getElement(id);
     textBox.select();
-    textBox.setSelectionRange(0, 
-  var link = getNewURL(itemID, tagID);
-  setValue(idNew, link);
+    textBox.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(textBox.value);
+    alert("Text Copied To Clipboard:\n" + textBox.value);
 }
-*/
 
+function setText(id, text='')
+{
+    var element = getElement(id);
+    element.text = text;
+}
+
+function setValue(id, text='')
+{
+    var element = getElement(id);
+    element.value = text;
+}
 
 function setLink (id, url)
 {
