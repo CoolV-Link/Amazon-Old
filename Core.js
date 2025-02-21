@@ -74,16 +74,14 @@ function redirect (url)
 
 function pageRedirect ()
 {
-  var url = false;
+  var url = "new.html";
   if (ARG_LIST) {
     url = `list.html?list=${ARG_LIST}`;
   }
   if (ARG_ITEM) {
     url = GetAmazonURL(ARG_ITEM, ARG_TAG);
   }
-  if (url) {
-    setLink("url-redirect", url);
-    redirect(url);
-  }
+  setLink("url-redirect", url);
+  redirect(url);
   return url;
 }
