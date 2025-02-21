@@ -41,16 +41,9 @@ function printList (list)
 {
   setText("list-name", list.name);
   var ul = getElement("list-items");
-  for (var 
-      
-       
-       
-       
-       
-       
-       
-       
-       printItems(ul, list.items);
+  for (var item : list.items)
+{
+       list.appendChild(printItem(item));
 }
 
 function printItems (list, items)
