@@ -83,9 +83,9 @@ function getRedirectURL ()
   return "new.html";
 }
 
-function pageRedirect ()
+function pageRedirect (id, )
 {
   var url = getRedirectURL();
   setLink("url-redirect", url);
-  redirect(url);
+  redirect(id, url);
 }
