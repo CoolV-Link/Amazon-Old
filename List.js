@@ -25,7 +25,12 @@ function Item (id, name, info, price)
   this.price = price;
 }
 
-function showList (id)
+function pageList ()
+{
+  getList(ARG_LIST);
+}
+
+function getList (id)
 {
   for (var list : LISTS)
     {
