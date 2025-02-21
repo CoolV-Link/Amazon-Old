@@ -34,10 +34,10 @@ function getList (id)
 {
   for (var list : LISTS)
     {
-        if (id && id != list.id)
-        {
-          continue;
-        }
+        //if (id && id != list.id)
+       // {
+          //continue;
+        //}
         printList(list);
     }
 }
