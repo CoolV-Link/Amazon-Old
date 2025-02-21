@@ -17,7 +17,7 @@ LISTS.push(cart);
 
 
 // List: Wish List
-var wishlist = new List("", "Saved", "Wish List");
+var wishlist = new List("22BGSVXAYLNR9", "Saved", "Wish List");
 wishlist.items = [
   new Item("", "Item", 0.00, "Sample"),
 ];
