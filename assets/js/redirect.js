@@ -10,7 +10,6 @@ function getRedirectURL ()
 {
   if (ARG_LIST) {
     return getListURL(ARG_LIST, ARG_TAG);
-     // return `${URL_SITE}/List/?list=${ARG_LIST}`;
   }
   if (ARG_ITEM) {
     return getAmazonURL(ARG_ITEM, ARG_TAG);
