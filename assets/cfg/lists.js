@@ -22,3 +22,9 @@ wishlist.items = [
   new Item("", "Item", "Sample", 0.00),
 ];
 LISTS.push(wishlist);
+
+var Wendells = new ListGroup("Wendells", "");
+
+Wendells.lists.push(history);
+
+LIST_GROUPS.push(Wendells);
