@@ -27,6 +27,11 @@ function Item (id, name, info, price)
   this.price = price;
 }
 
+function pageList(idTitle, idList)
+{
+  showList(ARG_LIST);
+}
+
 function showList (id)
 {
   for (var list : LISTS)
@@ -35,7 +40,7 @@ function showList (id)
         {
           continue;
         }
-        print(list);
+        printList(list);
     }
 }
 
@@ -43,4 +48,32 @@ function print (list)
 {
   console.log(`[${list.id}] ${list.name}`);
   console.log(list.items);
+}
+
+function printList (list)
+{
+  var title = getElement("list-name");
+  title.text = list.name;
+  var ul = getElement("list-items");
+  for (var item : list.items)
+  {
+       ul.appendChild(printItem(item));
+  }
+
+function printItems (list, items)
+{
+  console.log(`[${list.id}] ${list.name}`);
+  console.log(list.items);
+}
+
+function printItem (item)
+{
+  var itemText = createTextNode(item.name);
+  var itemLink = document.createElement('a');
+  itemLink.href = item.id;
+  itemLink.appendChild(itemText);
+  var listItem = document.createElement('li');
+  listItem.appendChild(itemLink);
+  //list.appendChild(listItem);
+  return listItem;
 }
