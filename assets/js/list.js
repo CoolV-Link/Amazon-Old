@@ -11,6 +11,15 @@ LISTS.push(test);
 
 var LISTS = [];
 
+var LIST_GROUPS = new Map();
+
+function ListGroup (id, info)
+{
+  this.id = id;
+  this.info = info;
+  this.lists = [];
+}
+
 function List (id, name, info)
 {
   this.id = id;
