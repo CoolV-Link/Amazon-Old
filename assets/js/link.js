@@ -19,7 +19,7 @@ function generateLink (idOld, idNew)
     return;
   }
   if (!tagID) {
-    tagID = tagDefault;
+    tagID = TAG_DEFAULT;
     console.log(`[Default] Tag ID: ${tagID}`);
   }
   var link = getAmazonURL(itemID, tagID);
