@@ -40,10 +40,10 @@ function pageList(idName, idList)
 {
   for (var list : LISTS)
     {
-        if (list.id != ARG_LIST.id)
+/*        if (list.id != ARG_LIST.id)
         {
           continue;
-        }
+        }*/
         printTitle(idName, list);
         printList(idList, list);
     }
