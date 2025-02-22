@@ -11,7 +11,7 @@ LISTS.push(test);
 
 var LISTS = [];
 
-var LIST_GROUPS = new Map();
+var LIST_GROUPS = [];
 
 function ListGroup (id, info)
 {
@@ -36,20 +36,16 @@ function Item (id, name, info, price)
   this.price = price;
 }
 
-function pageList(idTitle, idList)
-{
-  showList(ARG_LIST);
-}
-
-function showList (id)
+function pageList(idName, idList)
 {
   for (var list : LISTS)
     {
-        if (id && id != list.id)
+        if (list.id != ARG_LIST.id)
         {
           continue;
         }
-        printList(list);
+        printTitle(idName, list);
+        printList(idList, list);
     }
 }
 
@@ -59,11 +55,15 @@ function print (list)
   console.log(list.items);
 }
 
-function printList (list)
+function printTitle (idName, list)
 {
-  var title = getElement("list-name");
+  var title = getElement(idName);
   title.text = list.name;
-  var ul = getElement("list-items");
+}
+
+function printList (idList, list)
+{
+  var ul = getElement(idList);
   for (var item : list.items)
   {
        ul.appendChild(printItem(item));
