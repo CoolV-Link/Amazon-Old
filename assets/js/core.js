@@ -29,6 +29,11 @@ function getNewURL (itemID, tagID)
   return `${siteURL}?item=${itemID}&tag=${tagID}`;
 }
 
+function getAmazonListURL (listID)
+{
+  return `${URL_AMAZON}/wishlist/${listID}}`;
+}
+
 function getAmazonURL (itemID, tagID)
 {
   if (!tagID) {
