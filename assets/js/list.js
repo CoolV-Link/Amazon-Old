@@ -1,14 +1,5 @@
 /** Amazon List **/
 
-/**
-// Sample Lists
-var test = new List("", "List", "Sample");
-test.items = [
-  new Item("", "Item", "Sample", 0.00),
-];
-LISTS.push(test);
-**/
-
 var LISTS = [];
 
 var LIST_GROUPS = [];
