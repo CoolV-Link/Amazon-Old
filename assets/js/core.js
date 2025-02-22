@@ -1,4 +1,4 @@
-/** Amazon Link **/
+/** Amazon Core **/
 
 // Config
 
@@ -36,17 +36,14 @@ function getAmazonListURL (listID)
 
 function getAmazonURL (itemID, tagID)
 {
-  if (!tagID) {
-    tagID = TAG_DEFAULT;
-  }
+  tagID = tagID ? tagID : TAG_DEFAULT;
   return `${URL_AMAZON}/dp/${itemID}?tag=${tagID}`;
 }
 
 function getItemID (url)
 {
   var itemStart = url.indexOf('/dp/');
-  if (!itemStart)
-  {
+  if (!itemStart) {
     return false;
   }
   itemStart += 4;
@@ -54,7 +51,6 @@ function getItemID (url)
   var itemID = url.substring(itemStart, itemEnd);
   return itemID;
 }
-
 
 function getElement (id) {
   var element = document.getElementById(id);
@@ -70,16 +66,16 @@ function copyText(id)
     alert("Text Copied To Clipboard:\n" + textBox.value);
 }
 
-function setText(id, text='')
+function setText(id, text)
 {
     var element = getElement(id);
-    element.text = text;
+    element.text = `${text}`;
 }
 
-function setValue(id, text='')
+function setValue(id, text)
 {
     var element = getElement(id);
-    element.value = text;
+    element.value = `${text}`;
 }
 
 function setLink (id, url)
@@ -91,28 +87,8 @@ function setLink (id, url)
 
 function redirect (url)
 {
-  //var url = getAmazonURL(itemID, tagID);
   window.location.replace(`${url}`);
   //window.location.href = `${url}`;
-  //setLink(url);
-}
-
-function getRedirectURL ()
-{
-  if (ARG_LIST) {
-    return `${URL_SITE}/List/?list=${ARG_LIST}`;
-  }
-  if (ARG_ITEM) {
-    return GetAmazonURL(ARG_ITEM, ARG_TAG);
-  }
-  return `${URL_SITE}/Link/`;
-}
-
-function pageRedirect (id)
-{
-  var url = getRedirectURL();
-  setLink(id, url);
-  redirect(url);
 }
 
 function getListURL (listID, tagID)
