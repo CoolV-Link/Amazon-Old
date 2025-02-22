@@ -1,13 +1,5 @@
 /** Amazon Core **/
 
-// Config
-
-var TAG_DEFAULT = "";
-
-var URL_SITE = "";
-
-// End Config
-
 var URL_AMAZON = "https://www.amazon.com";
 
 var QUERY_STRING = window.location.search;
