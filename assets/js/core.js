@@ -25,8 +25,8 @@ console.log(`[Arg] List ID: ${ARG_LIST}`);
 
 function getNewURL (itemID, tagID)
 {
-  tagID = tagID ? tagID : DEFAULT_TAG;
-  return `${siteURL}?item=${itemID}&tag=${tagID}`;
+  tagID = tagID ? tagID : TAG_DEFAULT;
+  return `${URL_SITE}?item=${itemID}&tag=${tagID}`;
 }
 
 function getAmazonListURL (listID)
