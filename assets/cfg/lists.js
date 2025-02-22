@@ -1,5 +1,15 @@
 /** Lists Config **/
 
+/**
+// Sample Lists
+var test = new List("", "List", "Sample");
+test.items = [
+  new Item("", "Item", "Sample", 0.00),
+];
+LISTS.push(test);
+**/
+
+
 // List: History
 var history = new List("TPYL1KJFQ5X9", "History", "Order History");
 history.items = [
