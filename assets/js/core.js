@@ -114,3 +114,9 @@ function pageRedirect (id)
   setLink(id, url);
   redirect(url);
 }
+
+function getListURL (listID, tagID)
+{
+  return `${URL_SITE}/List/?list=${listID}&tag=${tagID}`;
+}
+
