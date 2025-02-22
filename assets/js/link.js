@@ -18,10 +18,11 @@ function generateLink (idOld, idNew)
     outputItem.value = "Error";
     return;
   }
-  if (!tagID) {
+  var tagID = ARG_TAG ? ARG_TAG : TAG_DEFAULT;
+/*  if (!tagID) {
     tagID = TAG_DEFAULT;
     console.log(`[Default] Tag ID: ${tagID}`);
-  }
+  }*/
   var link = getAmazonURL(itemID, tagID);
   outputItem.value = `${link}`;
 }
