@@ -9,13 +9,15 @@ function copyText(id)
     alert("Text Copied To Clipboard:\n" + textBox.value);
 }
 
-function generateLink (idOld, idNew)
+function generateLink (idOrig, idSite, idAff)
 {
-  var inputItem = getElement(idOld);
-  var outputItem = getElement(idNew);
-  var itemID = getItemID(inputItem.value);
+  var origItem = getElement(idOrig);
+  var siteItem = getElement(idSite);
+  var affItem = getElement(idAff);
+  var itemID = getItemID(origItem.value);
   if (itemID === false) {
-    outputItem.value = "Error";
+    siteItem.value = "Error";
+    affItem.value = "Error";
     return;
   }
   var tagID = ARG_TAG ? ARG_TAG : TAG_DEFAULT;
@@ -24,5 +26,6 @@ function generateLink (idOld, idNew)
     console.log(`[Default] Tag ID: ${tagID}`);
   }*/
   var link = getNewURL(itemID, tagID);
-  outputItem.value = `${link}`;
+  siteItem.value = `${link}`;
+  affItem.value = `${URL_AMAZON}/dp/${itemID}?tag=${tagID}`;
 }
