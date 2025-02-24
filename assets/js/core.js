@@ -58,23 +58,23 @@ function copyText(id)
     alert("Text Copied To Clipboard:\n" + textBox.value);
 }
 
-function setText(id, text)
+function setText(id, text='')
 {
     var element = getElement(id);
-    element.text = `${text}`;
+    element.text = text;
 }
 
-function setValue(id, text)
+function setValue(id, text='')
 {
     var element = getElement(id);
-    element.value = `${text}`;
+    element.value = text;
 }
 
-function setLink (id, url)
+function setLink (id, url='')
 {
   var element = getElement(id);
-  element.text = `${url}`;
-  element.href = `${url}`;
+  element.text = url;
+  element.href = url;
 }
 
 function redirect (url)
