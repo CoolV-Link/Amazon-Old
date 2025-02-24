@@ -32,13 +32,28 @@ function getAmazonURL (itemID, tagID)
   return `${URL_AMAZON}/dp/${itemID}?tag=${tagID}`;
 }
 
+function getStartItemID (url)
+{
+  var prefix = [
+    '/dp/',
+    '/d/',
+    '',
+  ];
+  for (var pre : prefix) {
+    var idx = url.indexOf(pre);
+    if (idx) {
+      return idx + pre.length();
+    }
+  }
+  return false;
+}
+
 function getItemID (url)
 {
-  var itemStart = url.indexOf('/dp/');
+  var itemStart = getStartItemID(url);
   if (!itemStart) {
     return false;
   }
-  itemStart += 4;
   var itemEnd = itemStart + 10;
   var itemID = url.substring(itemStart, itemEnd);
   return itemID;
