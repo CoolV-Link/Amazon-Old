@@ -7,21 +7,29 @@
 </head>
 <body>
 
-<div id="new">
-  <label for="url-new"><h1>Affiliate URL:</h1></label>
-  <input type="text" id="url-new" name="url-new" size="50" readonly="true" value="">
+<div id="aff">
+  <label for="url-site"><h1>Short URL:</h1></label>
+  <input type="text" id="url-site" name="url-new" size="50" readonly="true" value="">
   <br><br>
-  <button onclick="copyText('url-new')">Copy Link To Clipboard</button>
+  <button onclick="copyText('url-site')">Copy Link To Clipboard</button>
+  
+  <br><br><br><br>
+  
+  <label for="url-aff"><h1>Affiliate URL:</h1></label>
+  <input type="text" id="url-aff" name="url-new" size="50" readonly="true" value="">
+  <br><br>
+  <button onclick="copyText('url-aff')">Copy Link To Clipboard</button>
+  
   <br><br><br><br><hr><br>
 </div>
 
-<div id="old">
+<div id="orig">
  <!-- <form action="./" method="post">-->
-  <label for="url-old"><h1>Amazon URL:</h1></label>
-  <textarea id="url-old" name="url-old" rows="10" cols="60" required="true" placeholder="https://www.amazon.com/dp/[ITEM_ID]"></textarea>
+  <label for="url-orig"><h1>Amazon URL:</h1></label>
+  <textarea id="url-orig" name="url-old" rows="10" cols="60" required="true" placeholder="https://www.amazon.com/dp/[ITEM_ID]"></textarea>
   <br><br>
-  <button onclick="generateLink('url-old','url-new')">Generate Affiliate Link</button>
-  <button onclick="setValue('url-old')">Clear Text</button>
+  <button onclick="generateLink('url-orig','url-site','url-aff')">Generate Affiliate Link</button>
+  <button onclick="setValue('url-orig')">Clear Text</button>
   <!--</form>-->
 </div>
 
