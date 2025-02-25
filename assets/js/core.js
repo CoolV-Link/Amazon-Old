@@ -3,8 +3,8 @@
 var URL_AMAZON = "https://www.amazon.com";
 
 var URL_ITEM_PREFIX = [
-    '/dp/',
-    '/d/',
+    "/dp/",
+    "/d/",
 ];
 
 var REGEX_ITEM_ID = "";
@@ -47,7 +47,7 @@ function getStartItemID (url)
     if (index) {
       return index + prefix.length;
     }
-  }
+  });
   return false;
 }
 
