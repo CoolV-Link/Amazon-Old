@@ -14,8 +14,8 @@ function generateLink (idError, idOrig, idSite, idAff, idTags)
 //  var errorItem = getElement(idError);
   var origItem = getElement(idOrig);
   var tagItem = getElement(idTags);
-//  var siteItem = getElement(idSite);
-//  var affItem = getElement(idAff);
+  var siteItem = getElement(idSite);
+  var affItem = getElement(idAff);
   var origURL = origItem.value;
   if (!origURL) {
     setText(idError, "Error: Enter URL");
@@ -33,6 +33,8 @@ function generateLink (idError, idOrig, idSite, idAff, idTags)
   }
   var urlSite = `${URL_SITE_ITEM}?item=${itemID}&tag=${tagID}`; //getNewURL(itemID, tagID);
   var urlAff = getAmazonURL(itemID, tagID);
-  setValue(idSite, urlSite);
-  setValue(idAff, urlAff);
+    siteItem.value = urlSite;
+    affItem.value = urlAff;
+  //setValue(idSite, urlSite);
+  //setValue(idAff, urlAff);
 }
