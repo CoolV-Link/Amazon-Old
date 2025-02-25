@@ -26,7 +26,7 @@ function pageList(idName, idList)
     printList(idList, LISTS);
     return;
   }
-  LISTS.foreach(
+  LISTS.forEach(
     (list) => {
 //      if (list.id == ARG_LIST) {
         listTitle(idName, list.name);
@@ -50,7 +50,7 @@ function listTitle (idName, name)
 function printList (idList, items)
 {
   var ul = getElement(idList);
-  items.foreach(
+  items.forEach(
     (item) => {
       ul.appendChild(listItem(item));
     });
