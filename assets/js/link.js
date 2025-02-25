@@ -13,8 +13,8 @@ function generateLink (idOrig, idSite, idAff, idError)
 {
 //  var errorItem = getElement(idError);
   var origItem = getElement(idOrig);
-  var siteItem = getElement(idSite);
-  var affItem = getElement(idAff);
+//  var siteItem = getElement(idSite);
+//  var affItem = getElement(idAff);
   var origURL = origItem.value;
   if (!origURL) {
     setText(idError, "Error: Enter URL");
@@ -26,6 +26,8 @@ function generateLink (idOrig, idSite, idAff, idError)
     return;
   }
   var tagID = getTagID(ARG_TAG);
-  siteItem.value = getNewURL(itemID, tagID);
-  affItem.value = getAmazonURL(itemID, tagID);
+  var urlSite = getNewURL(itemID, tagID);
+  var urlAff = getAmazonURL(itemID, tagID);
+  setValue(idSite, urlSite);
+  setValue(idAff, urlAff);
 }
