@@ -29,8 +29,13 @@
   <label for="url-orig"><h1>Amazon URL:</h1></label>
   <textarea id="url-orig" name="url-orig" rows="10" cols="60" required="true" placeholder="https://www.amazon.com/dp/[ITEM_ID]"></textarea>
   <br><br>
-  <button onclick="generateLink('url-orig','url-site','url-aff', 'msg-error')">Generate Affiliate Link</button>
+  <button onclick="generateLink('msg-error','url-orig','url-site','url-aff','tags')">Generate Affiliate Link</button>
   <button onclick="setValue('url-orig')">Clear Text</button>
+  <br><br><br>
+  <label for="tags"><h1>Tags:</h1></label>
+  <select id="tags" name="tags">
+    <option value="gawdtech-20">GawdTech</option>
+  </select>
   <!--</form>-->
 </div>
 
