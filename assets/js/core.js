@@ -34,7 +34,7 @@ function getTagID (tagID)
 
 function getNewURL (itemID, tagID)
 {
-  tagID = getTagID(tagID);
+  //tagID = getTagID(tagID);
   return `${URL_ITEM}?${URL_ARG_ITEM}=${itemID}&${URL_ARG_TAG}=${tagID}`;
 }
 
@@ -45,7 +45,7 @@ function getAmazonListURL (listID)
 
 function getAmazonURL (itemID, tagID)
 {
-  tagID = getTagID(tagID);
+  //tagID = getTagID(tagID);
   return `${URL_AMAZON_ITEM}${itemID}?tag=${tagID}`;
 }
 
@@ -114,7 +114,7 @@ function redirect (url)
 
 function getListURL (listID, tagID)
 {
-  tagID = getTagID(tagID);
+  //tagID = getTagID(tagID);
   return `${URL_LIST}?${URL_ARG_LIST}=${listID}&${URL_ARG_TAG}=${tagID}`;
 }
 
