@@ -90,20 +90,20 @@ function copyText(id)
 function setText(id, text='')
 {
     var element = getElement(id);
-    element.innerHTML = text;
+    element.innerHTML = `${text}`;
 }
 
 function setValue(id, text='')
 {
     var element = getElement(id);
-    element.value = text;
+    element.value = `${text}`;
 }
 
 function setLink (id, url='')
 {
   var element = getElement(id);
-  element.innerHTML = url;
-  element.href = url;
+  element.innerHTML = `${url}`;
+  element.href = `${url}`;
 }
 
 function redirect (url)
