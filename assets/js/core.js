@@ -5,8 +5,9 @@ var URL_AMAZON = "https://www.amazon.com";
 var URL_ITEM_PREFIX = [
     '/dp/',
     '/d/',
-    '',
 ];
+
+var REGEX_ITEM_ID = "";
 
 var QUERY_STRING = window.location.search;
 var URL_PARAMS = new URLSearchParams(QUERY_STRING);
