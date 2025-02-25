@@ -31,7 +31,7 @@ function generateLink (idError, idOrig, idSite, idAff, idTags)
   if (ARG_TAG && !tagItem.value) {
       tagID = ARG_TAG;
   }
-  var urlSite = getNewURL(itemID, tagID);
+  var urlSite = `${URL_SITE_ITEM}?item=${itemID}&tag=${tagID}`; //getNewURL(itemID, tagID);
   var urlAff = getAmazonURL(itemID, tagID);
   setValue(idSite, urlSite);
   setValue(idAff, urlAff);
