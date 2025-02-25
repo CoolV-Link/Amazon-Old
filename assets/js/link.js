@@ -16,7 +16,7 @@ function generateLink (idOrig, idSite, idAff, idError)
   var siteItem = getElement(idSite);
   var affItem = getElement(idAff);
   var origURL = origItem.value;
-  if (origURL == "") {
+  if (!origURL) {
     setText(idError, "Error: Enter URL");
     return;
   }
@@ -25,7 +25,7 @@ function generateLink (idOrig, idSite, idAff, idError)
     setText(idError, "Error: Invalid ID");
     return;
   }
-  var tagID = ARG_TAG ? ARG_TAG : TAG_DEFAULT;
+  var tagID = getTagID(ARG_TAG);
   siteItem.value = getNewURL(itemID, tagID);
   affItem.value = getAmazonURL(itemID, tagID);
 }
