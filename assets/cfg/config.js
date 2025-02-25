@@ -11,7 +11,9 @@ var URL_ARG_LIST = "list";
 var URL_ARG_TAG = "tag";
 
 var TAGS = [
-  'gawdtech-20',
+  "gawdtech-20",
 ];
 
-var TAG_DEFAULT = TAGS[0];
+//var TAG_DEFAULT = TAGS[0];
+
+var TAG_DEFAULT = "gawdtech-20";
