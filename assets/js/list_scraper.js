@@ -3,6 +3,9 @@
 function getListHTML (id)
 {
   var url = `${URL_AMAZON}/wishlist/${id}`;
+  var html = (await (await fetch(url)).text());
+  var doc = new DOMParser().parseFromString(html, 'text/html');
+  return doc;
 }
 
 function createList (id)
