@@ -2,6 +2,12 @@
 
 var URL_AMAZON = "https://www.amazon.com";
 
+var URL_ITEM_PREFIX = [
+    '/dp/',
+    '/d/',
+    '',
+];
+
 var QUERY_STRING = window.location.search;
 var URL_PARAMS = new URLSearchParams(QUERY_STRING);
 
@@ -34,15 +40,11 @@ function getAmazonURL (itemID, tagID)
 
 function getStartItemID (url)
 {
-  var prefix = [
-    '/dp/',
-    '/d/',
-    '',
-  ];
-  for (var pre : prefix) {
-    var idx = url.indexOf(pre);
-    if (idx) {
-      return idx + pre.length();
+
+  for (var prefix : URL_ITEM_PREFIX) {
+    var index = url.indexOf(prefix);
+    if (index) {
+      return index + prefix.length;
     }
   }
   return false;
