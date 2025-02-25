@@ -22,9 +22,14 @@ var ARG_LIST = URL_PARAMS.get('list');
 console.log(`[Arg] List ID: ${ARG_LIST}`);
 
 
+function getTagID (tagID)
+{
+  return tagID ? tagID : TAG_DEFAULT;
+}
+
 function getNewURL (itemID, tagID)
 {
-  tagID = tagID ? tagID : TAG_DEFAULT;
+  tagID = getTagID(tagID);
   return `${URL_SITE}?item=${itemID}&tag=${tagID}`;
 }
 
@@ -35,7 +40,7 @@ function getAmazonListURL (listID)
 
 function getAmazonURL (itemID, tagID)
 {
-  tagID = tagID ? tagID : TAG_DEFAULT;
+  tagID = getTagID(tagID);
   return `${URL_AMAZON}/dp/${itemID}?tag=${tagID}`;
 }
 
@@ -103,7 +108,7 @@ function redirect (url)
 
 function getListURL (listID, tagID)
 {
-  tagID = tagID ? tagID : TAG_DEFAULT;
+  tagID = getTagID(tagID);
   return `${URL_SITE}/List/?list=${listID}&tag=${tagID}`;
 }
 
