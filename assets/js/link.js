@@ -21,8 +21,6 @@ function generateLink (idOrig, idSite, idAff)
     return;
   }
   var tagID = ARG_TAG ? ARG_TAG : TAG_DEFAULT;
-  var link = getNewURL(itemID, tagID);
-  var linkAff = getAmazonURL(itemID, tagID);
-  siteItem.value = `${link}`;
-  affItem.value = `${linkAff}`;
+  siteItem.value = getNewURL(itemID, tagID);
+  affItem.value = getAmazonURL(itemID, tagID);
 }
