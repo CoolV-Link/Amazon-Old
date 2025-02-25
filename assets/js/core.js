@@ -97,7 +97,7 @@ function setValue(id, text='')
 function setLink (id, url='')
 {
   var element = getElement(id);
-  element.text = url;
+  element.innerHTML = url;
   element.href = url;
 }
 
