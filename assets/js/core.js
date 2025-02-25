@@ -2,6 +2,11 @@
 
 var URL_AMAZON = "https://www.amazon.com";
 
+var URL_AMAZON_ITEM = `${URL_AMAZON}/dp/`;
+
+var URL_AMAZON_LIST = `${URL_AMAZON}/wishlist/`;
+
+
 var URL_ITEM_PREFIX = [
     "/dp/",
     "/d/",
@@ -12,13 +17,13 @@ var REGEX_ITEM_ID = "";
 var QUERY_STRING = window.location.search;
 var URL_PARAMS = new URLSearchParams(QUERY_STRING);
 
-var ARG_ITEM = URL_PARAMS.get('item');
+var ARG_ITEM = URL_PARAMS.get(URL_ARG_ITEM);
 console.log(`[Arg] Item ID: ${ARG_ITEM}`);
 
-var ARG_TAG = URL_PARAMS.get('tag');
+var ARG_TAG = URL_PARAMS.get(URL_ARG_TAG);
 console.log(`[Arg] Tag ID: ${ARG_TAG}`);
 
-var ARG_LIST = URL_PARAMS.get('list');
+var ARG_LIST = URL_PARAMS.get(URL_ARG_LIST);
 console.log(`[Arg] List ID: ${ARG_LIST}`);
 
 
@@ -30,18 +35,18 @@ function getTagID (tagID)
 function getNewURL (itemID, tagID)
 {
   tagID = getTagID(tagID);
-  return `${URL_SITE}?item=${itemID}&tag=${tagID}`;
+  return `${URL_ITEM}?${URL_ARG_ITEM}=${itemID}&${URL_ARG_TAG}=${tagID}`;
 }
 
 function getAmazonListURL (listID)
 {
-  return `${URL_AMAZON}/wishlist/${listID}}`;
+  return `${URL_AMAZON_LIST}${listID}}`;
 }
 
 function getAmazonURL (itemID, tagID)
 {
   tagID = getTagID(tagID);
-  return `${URL_AMAZON}/dp/${itemID}?tag=${tagID}`;
+  return `${URL_AMAZON_ITEM}${itemID}?tag=${tagID}`;
 }
 
 function getStartItemID (url)
@@ -110,6 +115,6 @@ function redirect (url)
 function getListURL (listID, tagID)
 {
   tagID = getTagID(tagID);
-  return `${URL_SITE}/List/?list=${listID}&tag=${tagID}`;
+  return `${URL_LIST}?${URL_ARG_LIST}=${listID}&${URL_ARG_TAG}=${tagID}`;
 }
 
