@@ -46,7 +46,7 @@ function createItem (listItem)
   var title = listItem.querySelector('.awl-item-title');
   var info = listItem.querySelector('.awl-item-title');
   var price = listItem.querySelector('.awl-item-wrapper');
-  return new ListItem(
+  return new Item(
     id,
     title[0].innerHTML,
     info, price
