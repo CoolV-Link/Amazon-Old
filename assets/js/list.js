@@ -23,17 +23,16 @@ function pageList(idName, idList)
   if (!ARG_LIST)
   {
     listTitle(idName, "Lists");
+    printList(idList, LISTS);
     return;
   }
   LISTS.foreach(
     (list) => {
-/*        if (list.id != ARG_LIST.id)
-        {
-          continue;
-        }*/
+//      if (list.id == ARG_LIST) {
         listTitle(idName, list.name);
         printList(idList, list.items);
-    }
+//      }
+    });
 }
 
 function print (list)
@@ -52,9 +51,10 @@ function printList (idList, items)
 {
   var ul = getElement(idList);
   items.foreach(
-  (item) => {
-       ul.appendChild(listItem(item));
-  }
+    (item) => {
+      ul.appendChild(listItem(item));
+    });
+}
 
 function printItems (list, items)
 {
@@ -70,6 +70,5 @@ function listItem (item)
   itemLink.appendChild(itemText);
   var listItem = document.createElement('li');
   listItem.appendChild(itemLink);
-  //list.appendChild(listItem);
   return listItem;
 }
