@@ -53,13 +53,13 @@ function getStartItemID (url)
       return index + prefix.length;
     }
   });
-  return -1;
+  return false;
 }
 
 function getItemID (url)
 {
   var itemStart = getStartItemID(url);
-  if (itemStart == -1) {
+  if (itemStart === false) {
     return false;
   }
   var itemEnd = itemStart + 10;
