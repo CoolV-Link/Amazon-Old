@@ -9,14 +9,14 @@
 
 <div id="aff">
   <label for="url-site"><h1>Short URL:</h1></label>
-  <input type="text" id="url-site" name="url-new" size="50" readonly="true" value="">
+  <input type="text" id="url-site" name="url-site" size="50" readonly="true" value="">
   <br><br>
   <button onclick="copyText('url-site')">Copy Link To Clipboard</button>
   
   <br><br><br><br>
   
   <label for="url-aff"><h1>Affiliate URL:</h1></label>
-  <input type="text" id="url-aff" name="url-new" size="50" readonly="true" value="">
+  <input type="text" id="url-aff" name="url-aff" size="50" readonly="true" value="">
   <br><br>
   <button onclick="copyText('url-aff')">Copy Link To Clipboard</button>
   
@@ -27,7 +27,7 @@
   <p id="msg-error">Paste Amazon product URL below.</p>
  <!-- <form action="./" method="post">-->
   <label for="url-orig"><h1>Amazon URL:</h1></label>
-  <textarea id="url-orig" name="url-old" rows="10" cols="60" required="true" placeholder="https://www.amazon.com/dp/[ITEM_ID]"></textarea>
+  <textarea id="url-orig" name="url-orig" rows="10" cols="60" required="true" placeholder="https://www.amazon.com/dp/[ITEM_ID]"></textarea>
   <br><br>
   <button onclick="generateLink('url-orig','url-site','url-aff', 'msg-error')">Generate Affiliate Link</button>
   <button onclick="setValue('url-orig')">Clear Text</button>
