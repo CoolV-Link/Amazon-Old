@@ -59,7 +59,7 @@ function getStartItemID (url)
 function getItemID (url)
 {
   var itemStart = getStartItemID(url);
-  if (itemStart != -1) {
+  if (itemStart == -1) {
     return false;
   }
   var itemEnd = itemStart + 10;
