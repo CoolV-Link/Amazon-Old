@@ -27,7 +27,7 @@ function generateLink (idError, idOrig, idSite, idAff, idTags)
     return;
   }
   setText(idError, `Item ID: ${itemID}`);
-  var tagID = getTagID(tagItem.value);
+  var tagID = tagItem.value;
   if (ARG_TAG && !tagItem.value) {
       tagID = ARG_TAG;
   }
