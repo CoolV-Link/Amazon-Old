@@ -14,7 +14,7 @@ function getRedirectURL ()
   if (ARG_ITEM) {
     return getAmazonURL(ARG_ITEM, ARG_TAG);
   }
-  return `${URL_SITE}/Link/`;
+  return `${URL_SITE_LINK}`;
 }
 
 function pageRedirect (id)
