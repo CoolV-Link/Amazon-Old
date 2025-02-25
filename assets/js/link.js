@@ -9,15 +9,20 @@ function copyText(id)
     alert("Text Copied To Clipboard:\n" + textBox.value);
 }
 
-function generateLink (idOrig, idSite, idAff)
+function generateLink (idOrig, idSite, idAff, idError)
 {
+//  var errorItem = getElement(idError);
   var origItem = getElement(idOrig);
   var siteItem = getElement(idSite);
   var affItem = getElement(idAff);
-  var itemID = getItemID(origItem.value);
+  var origURL = origItem.value;
+  if (!origURL) {
+    setText(idError, "Error: Enter URL");
+    return;
+  }
+  var itemID = getItemID(origURL);
   if (itemID === false) {
-    siteItem.value = "Error";
-    affItem.value = "Error";
+    setText(idError, "Error: Invalid ID");
     return;
   }
   var tagID = ARG_TAG ? ARG_TAG : TAG_DEFAULT;
