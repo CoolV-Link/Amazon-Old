@@ -103,6 +103,7 @@ function redirect (url)
 
 function getListURL (listID, tagID)
 {
+  tagID = tagID ? tagID : TAG_DEFAULT;
   return `${URL_SITE}/List/?list=${listID}&tag=${tagID}`;
 }
 
