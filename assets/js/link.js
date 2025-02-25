@@ -16,7 +16,7 @@ function generateLink (idOrig, idSite, idAff, idError)
   var siteItem = getElement(idSite);
   var affItem = getElement(idAff);
   var origURL = origItem.value;
-  if (!origURL) {
+  if (origURL == "") {
     setText(idError, "Error: Enter URL");
     return;
   }
