@@ -85,7 +85,7 @@ function copyText(id)
 function setText(id, text='')
 {
     var element = getElement(id);
-    element.text = text;
+    element.innerHTML = text;
 }
 
 function setValue(id, text='')
