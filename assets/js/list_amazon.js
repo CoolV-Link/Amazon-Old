@@ -8,8 +8,9 @@ function getListHTML (id)
   return doc;
 }
 
-function createList (id)
+function createList ()
 {
+  var id = ARG_LIST;
   var doc = getListHTML(id);
   var list = getListInfo(id, doc);
   list.items = getListItems(listParent);
