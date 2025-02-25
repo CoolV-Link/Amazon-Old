@@ -25,6 +25,7 @@ function generateLink (idOrig, idSite, idAff, idError)
     setText(idError, "Error: Invalid ID");
     return;
   }
+  setText(idError, `Item ID: ${itemID}`);
   var tagID = getTagID(ARG_TAG);
   var urlSite = getNewURL(itemID, tagID);
   var urlAff = getAmazonURL(itemID, tagID);
