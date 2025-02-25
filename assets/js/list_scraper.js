@@ -2,21 +2,29 @@
 
 function getListHTML (id)
 {
+  var url = `${URL_AMAZON}/wishlist/${id}`;
 }
 
-
-function getListInfo (id, doc)
+function createList (id)
 {
-  var title = listItem.querySelector('.awl-item-title');
-  var info = listItem.querySelector('.awl-item-title');
-  var owner = listItem.querySelector('.awl-item-title');
-  var listParent = doc.getElementById('awl-list-items');
-
-  var list = new List(id, title, info);
+  var doc = getListHTML(id);
+  var list = getListInfo(id, doc);
   list.items = getListItems(listParent);
+  LISTS.push(list);
   return list;
 }
 
+function getListInfo (id, doc)
+{
+  var title = doc.querySelector('.awl-list-title');
+  var info = doc.querySelector('#wlDesc');
+  var owner = doc.querySelector('.awl-item-title');
+  var listParent = doc.getElementById('awl-list-items');
+  return new List(
+    id,
+    title[0].innerHTML,
+    info);
+}
 
 function getListItems (listParent)
 {
@@ -30,9 +38,13 @@ function getListItems (listParent)
 
 function createItem (listItem)
 {
-  var id = listItem.querySelector('.awl-item-title');
+  var id = listItem.querySelector('.a-section');
   var title = listItem.querySelector('.awl-item-title');
   var info = listItem.querySelector('.awl-item-title');
-  var price = listItem.querySelector('.awl-item-title');
-  return new ListItem(id, title, info, price);
+  var price = listItem.querySelector('.awl-item-wrapper');
+  return new ListItem(
+    id,
+    title[0].innerHTML,
+    info, price
+  );
 }
