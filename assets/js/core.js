@@ -49,7 +49,7 @@ function getStartItemID (url)
   URL_ITEM_PREFIX.forEach(
   (prefix) => {
     var index = url.indexOf(prefix);
-    if (index != -1) {
+    if (index) {
       return index + prefix.length;
     }
   });
