@@ -40,8 +40,8 @@ function getAmazonURL (itemID, tagID)
 
 function getStartItemID (url)
 {
-
-  for (var prefix : URL_ITEM_PREFIX) {
+  URL_ITEM_PREFIX.foreach(
+  (prefix) => {
     var index = url.indexOf(prefix);
     if (index) {
       return index + prefix.length;
