@@ -2,15 +2,6 @@
 
 var LISTS = [];
 
-var LIST_GROUPS = [];
-
-function ListGroup (id, info)
-{
-  this.id = id;
-  this.info = info;
-  this.lists = [];
-}
-
 function List (id, name, info)
 {
   this.id = id;
@@ -34,8 +25,8 @@ function pageList(idName, idList)
     listTitle(idName, "Lists");
     return;
   }
-  for (var list : LISTS)
-    {
+  LISTS.foreach(
+    (list) => {
 /*        if (list.id != ARG_LIST.id)
         {
           continue;
@@ -60,8 +51,8 @@ function listTitle (idName, name)
 function printList (idList, items)
 {
   var ul = getElement(idList);
-  for (var item : items)
-  {
+  items.foreach(
+  (item) => {
        ul.appendChild(listItem(item));
   }
 
