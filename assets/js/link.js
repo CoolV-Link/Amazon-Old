@@ -9,10 +9,11 @@ function copyText(id)
     alert("Text Copied To Clipboard:\n" + textBox.value);
 }
 
-function generateLink (idOrig, idSite, idAff, idError)
+function generateLink (idError, idOrig, idSite, idAff, idTags)
 {
 //  var errorItem = getElement(idError);
   var origItem = getElement(idOrig);
+  var tagItem = getElement(idTags);
 //  var siteItem = getElement(idSite);
 //  var affItem = getElement(idAff);
   var origURL = origItem.value;
@@ -26,7 +27,10 @@ function generateLink (idOrig, idSite, idAff, idError)
     return;
   }
   setText(idError, `Item ID: ${itemID}`);
-  var tagID = getTagID(ARG_TAG);
+  var tagID = getTagID(tagItem.value);
+  if (ARG_TAG && !tagItem.value) {
+      tagID = ARG_TAG;
+  }
   var urlSite = getNewURL(itemID, tagID);
   var urlAff = getAmazonURL(itemID, tagID);
   setValue(idSite, urlSite);
