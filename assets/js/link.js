@@ -33,8 +33,8 @@ function generateLink (idError, idOrig, idSite, idAff, idTags)
   }
   var urlSite = `${URL_SITE_ITEM}?item=${itemID}&tag=${tagID}`; //getNewURL(itemID, tagID);
   var urlAff = getAmazonURL(itemID, tagID);
-    siteItem.value = urlSite;
-    affItem.value = urlAff;
-  //setValue(idSite, urlSite);
-  //setValue(idAff, urlAff);
+    //siteItem.value = urlSite;
+    //affItem.value = urlAff;
+  setValue(idSite, urlSite);
+  setValue(idAff, urlAff);
 }
