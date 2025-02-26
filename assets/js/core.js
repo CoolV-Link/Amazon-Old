@@ -32,16 +32,16 @@ function getTagID (tagID)
   return tagID ? tagID : TAG_DEFAULT;
 }
 
-function getNewURL (itemID, tagID)
+function getSiteURL (itemID, tagID)
 {
   tagID = getTagID(tagID);
-  return `${URL_AMAZON_ITEM}?${URL_ARG_ITEM}=${itemID}&${URL_ARG_TAG}=${tagID}`;
+  urlArgs = getUrlArgsItem(itemID, tagID);
+  return `${URL_AMAZON_ITEM}${urlArgs}`;
 }
 
-function getAmazonListURL (listID, tagID)
+function getAmazonListURL (listID)
 {
-  tagID = getTagID(tagID);
-  return `${URL_AMAZON_LIST}${listID}?${URL_ARG_TAG}=${tagID}`;
+  return `${URL_AMAZON_LIST}${listID}`;
 }
 
 function getAmazonURL (itemID, tagID)
@@ -92,8 +92,8 @@ function copyText(id)
 
 function setText(id, text='')
 {
-    var element = getElement(id);
-    element.innerHTML = text;
+  var element = getElement(id);
+  element.innerHTML = text;
 }
 
 function setValue(id, text='')
@@ -120,6 +120,23 @@ function redirect (url)
 function getListURL (listID, tagID)
 {
   tagID = getTagID(tagID);
-  return `${URL_AMAZON_LIST}?${URL_ARG_LIST}=${listID}&${URL_ARG_TAG}=${tagID}`;
+  urlArgs = getUrlArgsList(listID, tagID);
+  return `${URL_AMAZON_LIST}${urlArgs}`;
+}
+
+
+function getUrlArgsItem (itemID, tagID)
+{
+  return `?${URL_ARG_ITEM}=${itemID}&${URL_ARG_TAG}=${tagID}`;
+}
+
+function getUrlArgsList (listID, tagID)
+{
+  return `?${URL_ARG_LIST}=${listID}&${URL_ARG_TAG}=${tagID}`;
+}
+
+function getUrlArgsTag (tagID)
+{
+  return `${URL_ARG_TAG}=${tagID}`;
 }
 
