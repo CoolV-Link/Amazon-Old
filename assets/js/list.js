@@ -69,3 +69,13 @@ function logList (id, name, items)
   console.log(`[${id}] ${name}`);
   console.log(items);
 }
+
+
+function loadListConfig (cfgList)
+{
+  cfgList = cfgList ? cfgList: CFG_LIST_DEFAULT;
+  var script = document.createElement('script');
+  script.src = `${URL_CFG_LIST}${cfgList}.js`;
+  script.type = 'text/javascript';
+  document.body.appendChild(script);
+}
