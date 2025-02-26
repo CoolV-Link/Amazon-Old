@@ -73,9 +73,14 @@ function logList (id, name, items)
 
 function loadListConfig (cfgList)
 {
-  cfgList = cfgList ? cfgList: CFG_LIST_DEFAULT;
+  //cfgList = cfgList ? cfgList: CFG_LIST_DEFAULT;
   var script = document.createElement('script');
-  script.src = `${URL_CFG_LIST}${cfgList}.js`;
   script.type = 'text/javascript';
+  script.src = getListConfigURL(cfgList);
   document.body.appendChild(script);
+}
+
+function getListConfigURL (fileName=LIST_DEFAULT)
+{
+  return `${URL_SITE}/assets/cfg/list/${fileName}.js`;
 }
