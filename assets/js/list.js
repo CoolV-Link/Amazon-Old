@@ -22,32 +22,28 @@ function pageList(idName, idList)
 {
   if (!ARG_LIST)
   {
-    listTitle(idName, "Lists");
-    printList(idList, LISTS);
+    logList("-", "Lists", LISTS);
+    setListTitle(idName, "Lists");
+    setListItems(idList, LISTS);
     return;
   }
   LISTS.forEach(
     (list) => {
 //      if (list.id == ARG_LIST) {
-        listTitle(idName, list.name);
-        printList(idList, list.items);
+        logList(list.id, list.name, list.items);
+        setListTitle(idName, list.name);
+        setListItems(idList, list.items);
 //      }
     });
 }
 
-function print (list)
-{
-  console.log(`[${list.id}] ${list.name}`);
-  console.log(list.items);
-}
-
-function listTitle (idName, name)
+function setListTitle (idName, name)
 {
   var title = getElement(idName);
   title.text = name;
 }
 
-function printList (idList, items)
+function setListItems (idList, items)
 {
   var ul = getElement(idList);
   items.forEach(
@@ -56,13 +52,7 @@ function printList (idList, items)
     });
 }
 
-function printItems (list, items)
-{
-  console.log(`[${list.id}] ${list.name}`);
-  console.log(list.items);
-}
-
-function listItem (item)
+function newListItem (item)
 {
   var itemText = createTextNode(item.name);
   var itemLink = document.createElement('a');
@@ -71,4 +61,11 @@ function listItem (item)
   var listItem = document.createElement('li');
   listItem.appendChild(itemLink);
   return listItem;
+}
+
+
+function logList (id, name, items)
+{
+  console.log(`[${id}] ${name}`);
+  console.log(items);
 }
