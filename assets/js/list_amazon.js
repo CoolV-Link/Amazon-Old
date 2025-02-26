@@ -8,9 +8,9 @@ function downloadAmazonList(listID)
   return doc;
 }
 
-function newAmazonList ()
+function newAmazonList (listID)
 {
-  var listID = ARG_LIST;
+  //var listID = ARG_LIST;
   var doc = downloadAmazonList(listID);
   var list = getListInfo(listID, doc);
   var itemsParent = doc.getElementById('awl-list-items');
