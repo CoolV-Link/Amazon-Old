@@ -2,10 +2,6 @@
 
 var URL_AMAZON = "https://www.amazon.com";
 
-var URL_AMAZON_ITEM = `${URL_AMAZON}/dp/`;
-
-var URL_AMAZON_LIST = `${URL_AMAZON}/wishlist/`;
-
 var URL_ITEM_PREFIX = [
     "/dp/",
     "/d/",
@@ -18,16 +14,16 @@ var QUERY_STRING = window.location.search;
 var URL_PARAMS = new URLSearchParams(QUERY_STRING);
 
 
-var ARG_ITEM = URL_PARAMS.get(URL_ARG_ITEM);
+var ARG_ITEM = URL_PARAMS.get("item");
 console.log(`[Arg] Item ID: ${ARG_ITEM}`);
 
-var ARG_TAG = URL_PARAMS.get(URL_ARG_TAG);
+var ARG_TAG = URL_PARAMS.get("tag");
 console.log(`[Arg] Tag ID: ${ARG_TAG}`);
 
-var ARG_LIST = URL_PARAMS.get(URL_ARG_LIST);
+var ARG_LIST = URL_PARAMS.get("list");
 console.log(`[Arg] List ID: ${ARG_LIST}`);
 
-var ARG_LIST_CFG = URL_PARAMS.get(URL_ARG_LIST_CFG);
+var ARG_LIST_CFG = URL_PARAMS.get("group");
 console.log(`[Arg] List Cfg: ${ARG_LIST_CFG}`);
 
 
@@ -36,22 +32,22 @@ function getTagID (tagID)
   return tagID ? tagID : TAG_DEFAULT;
 }
 
-function getSiteURL (itemID, tagID)
+function getSiteURL (itemID, tagID=TAG_DEFAULT)
 {
-  tagID = getTagID(tagID);
-  urlArgs = getUrlArgsItem(itemID, tagID);
-  return `${URL_AMAZON_ITEM}${urlArgs}`;
+  //tagID = getTagID(tagID);
+  //urlArgs = getUrlArgsItem(itemID, tagID);
+  return `${URL_AMAZON}/${itemID}?tag=${tagID}`;
 }
 
 function getAmazonListURL (listID)
 {
-  return `${URL_AMAZON_LIST}${listID}`;
+  return `${URL_AMAZON}/wishlist/${listID}`;
 }
 
-function getAmazonURL (itemID, tagID)
+function getAmazonURL (itemID, tagID=TAG_DEFAULT)
 {
-  tagID = getTagID(tagID);
-  return `${URL_AMAZON_ITEM}${itemID}?${URL_ARG_TAG}=${tagID}`;
+  //tagID = getTagID(tagID);
+  return `${URL_AMAZON}/dp/${itemID}?tag=${tagID}`;
 }
 
 function getStartItemID (url)
@@ -94,19 +90,19 @@ function copyText(id)
 }
 */
 
-function setText(id, text='')
+function setText(id, text="")
 {
   var element = getElement(id);
   element.innerHTML = text;
 }
 
-function setValue(id, text='')
+function setValue(id, text="")
 {
   var element = getElement(id);
   element.value = text;
 }
 
-function setLink (id, url='')
+function setLink (id, url="")
 {
   var element = getElement(id);
   element.innerHTML = url;
@@ -121,11 +117,11 @@ function redirect (url)
 }
 */
 
-function getListURL (listID, tagID)
+function getListURL (listID, tagID=TAG_DEFAULT)
 {
-  tagID = getTagID(tagID);
-  urlArgs = getUrlArgsList(listID, tagID);
-  return `${URL_LIST}${urlArgs}`;
+  //tagID = getTagID(tagID);
+  //urlArgs = getUrlArgsList(listID, tagID);
+  return `${URL_SITE}/List/?list=${listID}&tag=${tagID}`;
 }
 
 
