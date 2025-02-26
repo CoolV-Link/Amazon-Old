@@ -2,8 +2,8 @@
 
 function redirect (url)
 {
-  window.location.replace(`${url}`);
-  //window.location.href = `${url}`;
+  window.location.replace(url);
+  //window.location.href = url;
 }
 
 function getRedirectURL ()
@@ -14,7 +14,7 @@ function getRedirectURL ()
   if (ARG_ITEM) {
     return getAmazonURL(ARG_ITEM, ARG_TAG);
   }
-  return `${URL_SITE_LINK}`;
+  return URL_SITE_LINK;
 }
 
 function pageRedirect (id)
