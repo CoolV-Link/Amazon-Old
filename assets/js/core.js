@@ -6,13 +6,13 @@ var URL_AMAZON_ITEM = `${URL_AMAZON}/dp/`;
 
 var URL_AMAZON_LIST = `${URL_AMAZON}/wishlist/`;
 
-
 var URL_ITEM_PREFIX = [
     "/dp/",
     "/d/",
 ];
 
 var REGEX_ITEM_ID = "";
+
 
 var QUERY_STRING = window.location.search;
 var URL_PARAMS = new URLSearchParams(QUERY_STRING);
@@ -34,18 +34,18 @@ function getTagID (tagID)
 
 function getNewURL (itemID, tagID)
 {
-  //tagID = getTagID(tagID);
+  tagID = getTagID(tagID);
   return `${URL_AMAZON_ITEM}?${URL_ARG_ITEM}=${itemID}&${URL_ARG_TAG}=${tagID}`;
 }
 
 function getAmazonListURL (listID)
 {
-  return `${URL_AMAZON_LIST}${listID}}`;
+  return `${URL_AMAZON_LIST}${listID}`;
 }
 
 function getAmazonURL (itemID, tagID)
 {
-  //tagID = getTagID(tagID);
+  tagID = getTagID(tagID);
   return `${URL_AMAZON_ITEM}${itemID}?tag=${tagID}`;
 }
 
@@ -78,6 +78,7 @@ function getElement (id) {
   return element;
 }
 
+/*
 function copyText(id)
 {
     var textBox = getElement(id);
@@ -86,24 +87,25 @@ function copyText(id)
     navigator.clipboard.writeText(textBox.value);
     alert("Text Copied To Clipboard:\n" + textBox.value);
 }
+*/
 
 function setText(id, text='')
 {
     var element = getElement(id);
-    element.innerHTML = ''+text;
+    element.innerHTML = text;
 }
 
 function setValue(id, text='')
 {
-    var element = getElement(id);
-    element.value = ''+text;
+  var element = getElement(id);
+  element.value = text;
 }
 
 function setLink (id, url='')
 {
   var element = getElement(id);
-  element.innerHTML = ''+url;
-  element.href = ''+url;
+  element.innerHTML = url;
+  element.href = url;
 }
 
 /*
@@ -116,7 +118,7 @@ function redirect (url)
 
 function getListURL (listID, tagID)
 {
-  //tagID = getTagID(tagID);
+  tagID = getTagID(tagID);
   return `${URL_AMAZON_LIST}?${URL_ARG_LIST}=${listID}&${URL_ARG_TAG}=${tagID}`;
 }
 
