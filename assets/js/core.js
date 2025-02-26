@@ -38,15 +38,16 @@ function getNewURL (itemID, tagID)
   return `${URL_AMAZON_ITEM}?${URL_ARG_ITEM}=${itemID}&${URL_ARG_TAG}=${tagID}`;
 }
 
-function getAmazonListURL (listID)
+function getAmazonListURL (listID, tagID)
 {
-  return `${URL_AMAZON_LIST}${listID}`;
+  tagID = getTagID(tagID);
+  return `${URL_AMAZON_LIST}${listID}?${URL_ARG_TAG}=${tagID}`;
 }
 
 function getAmazonURL (itemID, tagID)
 {
   tagID = getTagID(tagID);
-  return `${URL_AMAZON_ITEM}${itemID}?tag=${tagID}`;
+  return `${URL_AMAZON_ITEM}${itemID}?${URL_ARG_TAG}=${tagID}`;
 }
 
 function getStartItemID (url)
