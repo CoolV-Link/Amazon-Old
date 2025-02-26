@@ -26,6 +26,9 @@ console.log(`[Arg] Tag ID: ${ARG_TAG}`);
 var ARG_LIST = URL_PARAMS.get(URL_ARG_LIST);
 console.log(`[Arg] List ID: ${ARG_LIST}`);
 
+var ARG_LIST_CFG = URL_PARAMS.get(URL_ARG_LIST_CFG);
+console.log(`[Arg] List Cfg: ${ARG_LIST_CFG}`);
+
 
 function getTagID (tagID)
 {
