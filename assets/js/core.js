@@ -35,7 +35,7 @@ function getTagID (tagID)
 function getNewURL (itemID, tagID)
 {
   //tagID = getTagID(tagID);
-  return `${URL_ITEM}?${URL_ARG_ITEM}=${itemID}&${URL_ARG_TAG}=${tagID}`;
+  return `${URL_AMAZON_ITEM}?${URL_ARG_ITEM}=${itemID}&${URL_ARG_TAG}=${tagID}`;
 }
 
 function getAmazonListURL (listID)
@@ -106,15 +106,17 @@ function setLink (id, url='')
   element.href = ''+url;
 }
 
+/*
 function redirect (url)
 {
-  window.location.replace(''+url);
+  window.location.replace(url);
   //window.location.href = `${url}`;
 }
+*/
 
 function getListURL (listID, tagID)
 {
   //tagID = getTagID(tagID);
-  return `${URL_LIST}?${URL_ARG_LIST}=${listID}&${URL_ARG_TAG}=${tagID}`;
+  return `${URL_AMAZON_LIST}?${URL_ARG_LIST}=${listID}&${URL_ARG_TAG}=${tagID}`;
 }
 
