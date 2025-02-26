@@ -2,7 +2,7 @@
 
 function downloadAmazonList(listID)
 {
-  var url = `${URL_AMAZON_LIST}${listID}`;
+  var url = getAmazonListURL(listID);
   var html = (await (await fetch(url)).text());
   var doc = new DOMParser().parseFromString(html, 'text/html');
   return doc;
@@ -13,7 +13,8 @@ function newAmazonList ()
   var listID = ARG_LIST;
   var doc = downloadAmazonList(listID);
   var list = getListInfo(listID, doc);
-  list.items = getListItems(listParent);
+  var itemsParent = doc.getElementById('awl-list-items');
+  list.items = getListItems(itemsParent);
   LISTS.push(list);
   return list;
 }
@@ -23,7 +24,6 @@ function getListInfo (listID, doc)
   var title = doc.querySelector('.awl-list-title');
   var info = doc.querySelector('#wlDesc');
   var owner = doc.querySelector('.awl-item-title');
-  var listParent = doc.getElementById('awl-list-items');
   return new List(
     listID,
     title[0].innerHTML,
