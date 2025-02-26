@@ -3,7 +3,7 @@
 function redirect (url)
 {
   window.location.replace(url);
-  //window.location.href = url;
+  window.location.href = url;
 }
 
 function getRedirectURL ()
@@ -20,6 +20,6 @@ function getRedirectURL ()
 function pageRedirect (id)
 {
   var url = getRedirectURL();
-  setLink(id, url);
   redirect(url);
+  setLink(id, url);
 }
