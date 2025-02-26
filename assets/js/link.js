@@ -14,8 +14,8 @@ function generateLink (idError, idOrig, idSite, idAff, idTags)
 //  var errorItem = getElement(idError);
   var origItem = getElement(idOrig);
   var tagItem = getElement(idTags);
-  var siteItem = getElement(idSite);
-  var affItem = getElement(idAff);
+  //var siteItem = getElement(idSite);
+  //var affItem = getElement(idAff);
   var origURL = origItem.value;
   if (!origURL) {
     setText(idError, "Error: Enter URL");
