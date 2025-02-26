@@ -17,6 +17,7 @@ var REGEX_ITEM_ID = "";
 var QUERY_STRING = window.location.search;
 var URL_PARAMS = new URLSearchParams(QUERY_STRING);
 
+
 var ARG_ITEM = URL_PARAMS.get(URL_ARG_ITEM);
 console.log(`[Arg] Item ID: ${ARG_ITEM}`);
 
@@ -124,7 +125,7 @@ function getListURL (listID, tagID)
 {
   tagID = getTagID(tagID);
   urlArgs = getUrlArgsList(listID, tagID);
-  return `${URL_AMAZON_LIST}${urlArgs}`;
+  return `${URL_LIST}${urlArgs}`;
 }
 
 
