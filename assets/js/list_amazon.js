@@ -1,8 +1,8 @@
 /** Amazon List Scraper **/
 
-function getListHTML (id)
+function getListHTML (listID)
 {
-  var url = `${URL_AMAZON}/wishlist/${id}`;
+  var url = `${URL_AMAZON_LIST}${listID}`;
   var html = (await (await fetch(url)).text());
   var doc = new DOMParser().parseFromString(html, 'text/html');
   return doc;
@@ -10,22 +10,22 @@ function getListHTML (id)
 
 function createList ()
 {
-  var id = ARG_LIST;
-  var doc = getListHTML(id);
-  var list = getListInfo(id, doc);
+  var listID = ARG_LIST;
+  var doc = getListHTML(listID);
+  var list = getListInfo(listID, doc);
   list.items = getListItems(listParent);
   LISTS.push(list);
   return list;
 }
 
-function getListInfo (id, doc)
+function getListInfo (listID, doc)
 {
   var title = doc.querySelector('.awl-list-title');
   var info = doc.querySelector('#wlDesc');
   var owner = doc.querySelector('.awl-item-title');
   var listParent = doc.getElementById('awl-list-items');
   return new List(
-    id,
+    listID,
     title[0].innerHTML,
     info);
 }
@@ -42,12 +42,12 @@ function getListItems (listParent)
 
 function createItem (listItem)
 {
-  var id = listItem.querySelector('.a-section');
+  var itemID = listItem.querySelector('.a-section');
   var title = listItem.querySelector('.awl-item-title');
   var info = listItem.querySelector('.awl-item-title');
   var price = listItem.querySelector('.awl-item-wrapper');
   return new Item(
-    id,
+    itemID,
     title[0].innerHTML,
     info, price
   );
