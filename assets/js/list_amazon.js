@@ -1,6 +1,6 @@
 /** Amazon List Scraper **/
 
-function getListHTML (listID)
+function downloadAmazonList(listID)
 {
   var url = `${URL_AMAZON_LIST}${listID}`;
   var html = (await (await fetch(url)).text());
@@ -8,10 +8,10 @@ function getListHTML (listID)
   return doc;
 }
 
-function createList ()
+function newAmazonList ()
 {
   var listID = ARG_LIST;
-  var doc = getListHTML(listID);
+  var doc = downloadAmazonList(listID);
   var list = getListInfo(listID, doc);
   list.items = getListItems(listParent);
   LISTS.push(list);
