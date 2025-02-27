@@ -22,7 +22,7 @@ function pageList (idPage, idTitle)
 
   lists.forEach(
     (list) => {
-        logList(`[${list.id}] ${list.name}:`, list.items);
+        logList('['+list.id+'] '+list.name+':', list.items);
         var listContainer = newListContainer(list);
         nodePage.appendChild(listContainer);
     });
