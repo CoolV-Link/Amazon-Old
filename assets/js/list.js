@@ -73,8 +73,8 @@ function newListContainer (list)
 
   container.appendChild(newTextLink('h1', list.name, '#'+list.id));
   container.appendChild(newContainerNode('p', 'br',
-      createTextNode(null, list.info),
-      newTextLink(null, 'Owner: '+list.owner.name, '#'+list.owner.id)));
+      createTextNode(list.info),
+      newTextLink('', 'Owner: '+list.owner.name, '#'+list.owner.id)));
   //container.appendChild(newParagraph(list.info, 'Owner: '+list.owner));
   container.appendChild(newListItems(list.items));
 
@@ -96,9 +96,9 @@ function newContainerNode (type, spacer, ...nodes)
   return container;
 }
 
-function loadSavedList(listID)
+function loadSavedList (fileName)
 {
-  var url = `${URL_SITE}/assets/list/${listID}.json`;
+  var url = `${URL_SITE}/assets/list/${fileName}.json`;
   var data = (await (await fetch(url)).text());
   var json = JSON.parse(data);
   return json;
