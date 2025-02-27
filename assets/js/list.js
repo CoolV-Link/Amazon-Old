@@ -2,6 +2,7 @@
 
 //var LISTS = [];
 
+/*
 function List (id, name, info)
 {
   this.id = id;
@@ -17,7 +18,7 @@ function Item (id, name, info, price)
   this.info = info;
   this.price = price;
 }
-
+*/
 
 function pageList(idPage, nodeTitle)
 {
@@ -34,7 +35,8 @@ function pageList(idPage, nodeTitle)
 
   if (!ARG_LIST) {
     logList("Lists: ", lists);
-    newListItems(lists);
+    var listItems = newListItems(lists);
+    nodePage.appendChild(listItems);
     return;
   }
 
