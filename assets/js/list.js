@@ -14,7 +14,7 @@ function pageList (idPage, idTitle)
   var lists = loadSavedList(ARG_LIST_CFG);
 
   if (!ARG_LIST) {
-    logList("Lists: ", lists);
+    logList("Lists:", lists);
     var listItems = newListItems(lists);
     nodePage.appendChild(listItems);
     return;
@@ -22,7 +22,7 @@ function pageList (idPage, idTitle)
 
   lists.forEach(
     (list) => {
-        logList(`[${list.id}] ${list.name}: `, list.items);
+        logList(`[${list.id}] ${list.name}:`, list.items);
         var listContainer = newListContainer(list);
         nodePage.appendChild(listContainer);
     });
@@ -106,8 +106,9 @@ function loadSavedList(listID)
 
 function logList (text, ...args)
 {
-  args.forEach(
-    (arg) => {
-      console.log(text+args);
-    });
+//  args.forEach(
+//    (arg) => {
+      console.log(text);
+      console.log(args);
+//    });
 }
