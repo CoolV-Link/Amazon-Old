@@ -8,13 +8,15 @@ function downloadAmazonList(listID)
   return doc;
 }
 
-function newAmazonList (listID)
+function pageAmazonList (idName, idList)
 {
   //var listID = ARG_LIST;
   var doc = downloadAmazonList(listID);
   var list = getListInfo(listID, doc);
+  setListTitle(idName, list.name);
   var itemsParent = doc.getElementById('awl-list-items');
   list.items = getListItems(itemsParent);
+  setListItems(idList, list.items);
   LISTS.push(list);
   return list;
 }
