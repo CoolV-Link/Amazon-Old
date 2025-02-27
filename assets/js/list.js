@@ -20,10 +20,10 @@ function Item (id, name, info, price)
 }
 */
 
-function pageList(idPage, nodeTitle)
+function pageList(idPage, idTitle)
 {
   var nodePage = getElement(idPage);
-  var nodeTitle = getElement(nodeTitle);
+  var nodeTitle = getElement(idTitle);
 
   if (!ARG_LIST_CFG) {
     nodeTitle.innerHTML = "Error: Invalid File";
