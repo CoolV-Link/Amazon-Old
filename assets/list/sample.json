@@ -3,43 +3,42 @@
   {
     "id": "list-1",
     "name": "Sample List 1",
-    "info": "",
+    "info": "This list has 3 items.",
     "owner": {
-      "id": "",
-      "name": ""
+      "id": "group-1",
+      "name": "Sample Group 1"
     },
     "items": [
       {
         "id": "1111111111",
-        "name": "",
-        "user": "",
-        "price": "",
+        "name": "Sample Item 1.1",
         "info": "",
+        "price": "",
         "owner": {
-          "id": "",
-          "name": ""
-        },
+          "id": "group-1",
+          "name": "Sample Group 1"
+        }
+      },
       {
         "id": "1111222222",
-        "name": "",
-        "user": "",
-        "price": "",
+        "name": "Sample Item 1.2",
         "info": "",
+        "price": "",
         "owner": {
-          "id": "",
-          "name": ""
-        },
+          "id": "group-1",
+          "name": "Sample Group 1"
+        }
+      },
       {
         "id": "1111333333",
-        "name": "",
-        "user": "",
-        "price": "",
+        "name": "Sample Item 1.3",
         "info": "",
+        "price": "",
         "owner": {
-          "id": "",
-          "name": ""
-        },
-      },
+          "id": "group-1",
+          "name": "Sample Group 1"
+        }
+      }
     ]
   },
 
@@ -48,31 +47,29 @@
     "name": "Sample List 2",
     "info": "",
     "owner": {
-      "id": "",
-      "name": ""
+      "id": "user-2",
+      "name": "Sample User 2"
     },
     "items": [
       {
         "id": "2222111111",
-        "name": "",
-        "user": "",
-        "price": "",
+        "name": "Sample Item 2.1",
         "info": "",
+        "price": "",
         "owner": {
-          "id": "",
-          "name": ""
-        },
+          "id": "user-2",
+          "name": "Sample User 2"
+        }
       },
       {
         "id": "2222222222",
-        "name": "",
-        "user": "",
-        "price": "",
+        "name": "Sample Item 2.2",
         "info": "",
+        "price": "",
         "owner": {
-          "id": "",
-          "name": ""
-        },
+          "id": "user-2",
+          "name": "Sample User 2"
+        }
       },
     ]
   },
@@ -82,21 +79,20 @@
     "name": "Sample List 3",
     "info": "",
     "owner": {
-      "id": "",
-      "name": ""
+      "id": "group-1",
+      "name": "Sample Group 1"
     },
     "items": [
       {
         "id": "3333111111",
-        "name": "",
-        "user": "",
-        "price": "",
+        "name": "Sample Item 3.1",
         "info": "",
+        "price": "",
         "owner": {
-          "id": "",
-          "name": ""
-        },
-      },
+          "id": "group-1",
+          "name": "Sample Group 1"
+        }
+      }
     ]
   }
 
