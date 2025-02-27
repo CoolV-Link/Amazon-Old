@@ -99,7 +99,10 @@ function getListItem (listItem)
   var title = listItem.querySelector('.awl-item-title');
   var info = listItem.querySelector('.awl-item-title');
   var price = listItem.querySelector('.awl-item-wrapper');
+}
 
+function setListItem (id, name, info, price)
+{
     //title[0].innerHTML
   var listItem = document.createElement('li');
   var itemLink = document.createElement('a');
