@@ -22,7 +22,7 @@ function pageList(idName, idList)
 {
   //var cfgURL = getListConfigURL(cfgList);
   //if (!ARG_LIST_CFG) {
-    newAmazonList(ARG_LIST);
+    //newAmazonList(ARG_LIST);
   //}
   //LoadListConfig(cfgURL, cfgInit),
   if (!ARG_LIST) {
