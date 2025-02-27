@@ -80,7 +80,11 @@ function loadListConfig (cfgList)
   document.body.appendChild(script);
 }
 
-function getListConfigURL (fileName=LIST_DEFAULT)
+function getListConfigURL (fileName)
 {
+  if (!fileName) {
+    fileName = LIST_DEFAULT;
+    //return `${URL_SITE}/assets/js/list_amazon.js`;
+  }
   return `${URL_SITE}/assets/cfg/list/${fileName}.js`;
 }
