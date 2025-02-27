@@ -23,7 +23,7 @@ console.log(`[Arg] Tag ID: ${ARG_TAG}`);
 var ARG_LIST = URL_PARAMS.get("list");
 console.log(`[Arg] List ID: ${ARG_LIST}`);
 
-var ARG_LIST_CFG = URL_PARAMS.get("group");
+var ARG_LIST_CFG = URL_PARAMS.get("file");
 console.log(`[Arg] List Cfg: ${ARG_LIST_CFG}`);
 
 
