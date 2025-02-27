@@ -44,25 +44,26 @@ function pageList(idName, idList)
 function setListTitle (idName, name)
 {
   var title = getElement(idName);
-  title.text = name;
+  title.innerHTML = name;
 }
 
 function setListItems (idList, items)
 {
   var ul = getElement(idList);
+  ul.innerHTML = "";
   items.forEach(
     (item) => {
-      ul.appendChild(listItem(item));
+      ul.appendChild(newListItem(item));
     });
 }
 
 function newListItem (item)
 {
-  var itemText = createTextNode(item.name);
+  var listItem = document.createElement('li');
   var itemLink = document.createElement('a');
+  var itemText = createTextNode(item.name);
   itemLink.href = item.id;
   itemLink.appendChild(itemText);
-  var listItem = document.createElement('li');
   listItem.appendChild(itemLink);
   return listItem;
 }
