@@ -1,4 +1,59 @@
-/** Amazon List Scraper **/
+/** Amazon List **/
+
+function pageList(idName, idList)
+{
+/*
+  if (ARG_USER) {
+    logList("-", "Lists", LISTS);
+    setListTitle(idName, "Lists");
+    setListItems(idList, LISTS);
+    return;
+  }
+  LISTS.forEach(
+    (list) => {
+//      if (list.id == ARG_LIST) {
+        logList(list.id, list.name, list.items);
+        setListTitle(idName, list.name);
+        setListItems(idList, list.items);
+//      }
+    });
+*/
+}
+
+function setListTitle (idName, name)
+{
+  var title = getElement(idName);
+  title.innerHTML = name;
+}
+
+function setListItems (idList, items)
+{
+  var ul = getElement(idList);
+  ul.innerHTML = "";
+  items.forEach(
+    (item) => {
+      ul.appendChild(newListItem(item));
+    });
+}
+
+function newListItem (item)
+{
+  var listItem = document.createElement('li');
+  var itemLink = document.createElement('a');
+  var itemText = createTextNode(item.name);
+  itemLink.href = item.id;
+  itemLink.appendChild(itemText);
+  listItem.appendChild(itemLink);
+  return listItem;
+}
+
+
+function logList (id, name, items)
+{
+  console.log(`[${id}] ${name}`);
+  console.log(items);
+}
+
 
 function downloadAmazonList(listID)
 {
@@ -12,13 +67,8 @@ function pageAmazonList (idName, idList)
 {
   //var listID = ARG_LIST;
   var doc = downloadAmazonList(listID);
-  var list = getListInfo(listID, doc);
-  setListTitle(idName, list.name);
-  var itemsParent = doc.getElementById('awl-list-items');
-  list.items = getListItems(itemsParent);
-  setListItems(idList, list.items);
-  LISTS.push(list);
-  return list;
+  getListInfo(idName, doc);
+  getListItems(idList, doc);
 }
 
 function getListInfo (listID, doc)
@@ -26,31 +76,36 @@ function getListInfo (listID, doc)
   var title = doc.querySelector('.awl-list-title');
   var info = doc.querySelector('#wlDesc');
   var owner = doc.querySelector('.awl-item-title');
-  return new List(
+  setListTitle(idName, title[0].innerHTML);
+  /*return new List(
     listID,
     title[0].innerHTML,
-    info);
+    info);*/
 }
 
-function getListItems (listParent)
+function getListItems (idList, doc)
 {
-  var items = [];
+  var itemsParent = doc.getElementById('awl-list-items');
   var listItems = listParent.querySelector('li');
   for (var i = 0; i < listItems.length; i++) {
-    items.push(createListItem(listItems[i]));
+    createListItem(listItems[i]);
   }
   return items;
 }
 
-function createItem (listItem)
+function getListItem (listItem)
 {
   var itemID = listItem.querySelector('.a-section');
   var title = listItem.querySelector('.awl-item-title');
   var info = listItem.querySelector('.awl-item-title');
   var price = listItem.querySelector('.awl-item-wrapper');
-  return new Item(
-    itemID,
-    title[0].innerHTML,
-    info, price
-  );
+
+    //title[0].innerHTML
+  var listItem = document.createElement('li');
+  var itemLink = document.createElement('a');
+  var itemText = createTextNode(item.name);
+  itemLink.href = item.id;
+  itemLink.appendChild(itemText);
+  listItem.appendChild(itemLink);
+  return listItem;
 }
