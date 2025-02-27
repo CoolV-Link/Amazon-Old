@@ -24,7 +24,7 @@ function pageList(idName, idList)
   //if (!ARG_LIST_CFG) {
     newAmazonList(ARG_LIST);
   //}
-  LoadListConfig(cfgURL, cfgInit),
+  //LoadListConfig(cfgURL, cfgInit),
   if (!ARG_LIST) {
     logList("-", "Lists", LISTS);
     setListTitle(idName, "Lists");
