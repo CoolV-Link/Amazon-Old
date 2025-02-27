@@ -20,9 +20,11 @@ function Item (id, name, info, price)
 
 function pageList(idName, idList)
 {
-  if (!ARG_LIST_CFG) {
+  //var cfgURL = getListConfigURL(cfgList);
+  //if (!ARG_LIST_CFG) {
     downloadAmazonList(ARG_LIST);
-  }
+  //}
+  LoadListConfig(cfgURL, cfgInit),
   if (!ARG_LIST) {
     logList("-", "Lists", LISTS);
     setListTitle(idName, "Lists");
@@ -72,13 +74,24 @@ function logList (id, name, items)
   console.log(items);
 }
 
+var jsInitAmazon = function ()
+{
+  downloadAmazonList(ARG_LIST),
+}
 
-function loadListConfig (cfgList)
+var jsInitConfig = function ()
+{
+  loadList(ARG_LIST);
+}
+
+function loadListConfig (url, func)
 {
   //cfgList = cfgList ? cfgList: CFG_LIST_DEFAULT;
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = getListConfigURL(cfgList);
+  script.src = url;
+  script.onload = func;
+  script.onreadystatechange = func;
   document.body.appendChild(script);
 }
 
