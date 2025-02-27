@@ -112,3 +112,6 @@ function logList (text, ...args)
       console.log(args);
 //    });
 }
+
+/** INIT **/
+pageList('list-page', 'list-name');
