@@ -20,8 +20,10 @@ function Item (id, name, info, price)
 
 function pageList(idName, idList)
 {
-  if (!ARG_LIST)
-  {
+  if (!ARG_LIST_CFG) {
+    downloadAmazonList(ARG_LIST);
+  }
+  if (!ARG_LIST) {
     logList("-", "Lists", LISTS);
     setListTitle(idName, "Lists");
     setListItems(idList, LISTS);
