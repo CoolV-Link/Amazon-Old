@@ -13,5 +13,5 @@ var TAG_DEFAULT = "gawdtech-20";
 var TAGS = new Map();
 
 // TAGS.put("__TAG_ID__", "__TAG_PARENT__");
-TAGS.put("gawdtech-20", "gawdtech-20");
-TAGS.put("thecoolv-20", "gawdtech-20");
+TAGS.set("gawdtech-20", "gawdtech-20");
+TAGS.set("thecoolv-20", "gawdtech-20");
