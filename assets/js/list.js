@@ -1,25 +1,5 @@
 /** Amazon List **/
 
-//var LISTS = [];
-
-/*
-function List (id, name, info)
-{
-  this.id = id;
-  this.name = name;
-  this.info = info;
-  this.items = [];
-}
-
-function Item (id, name, info, price)
-{
-  this.id = id;
-  this.name = name;
-  this.info = info;
-  this.price = price;
-}
-*/
-
 function pageList (idPage, idTitle)
 {
   var nodePage = getElement(idPage);
