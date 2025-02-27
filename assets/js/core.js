@@ -36,7 +36,7 @@ function getSiteURL (itemID, tagID=TAG_DEFAULT)
 {
   //tagID = getTagID(tagID);
   //urlArgs = getUrlArgsItem(itemID, tagID);
-  return `${URL_AMAZON}/${itemID}?tag=${tagID}`;
+  return `${URL_SITE}/?item=${itemID}&tag=${tagID}`;
 }
 
 function getAmazonListURL (listID)
