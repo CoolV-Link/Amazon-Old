@@ -20,7 +20,7 @@ function Item (id, name, info, price)
 }
 */
 
-function pageList(idPage, idTitle)
+function pageList (idPage, idTitle)
 {
   var nodePage = getElement(idPage);
   var nodeTitle = getElement(idTitle);
